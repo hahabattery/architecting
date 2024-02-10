@@ -27,6 +27,7 @@ Read the Jekyll array containing a list of all the pages:
     title: {{page.title}}
 {% endfor %}
 ```
+
 Notice I used a where_exp filter in the list of pages. Sometimes a page does not have a title in the front matter. That will remove untitled pages from the listing. If you want all of them, even without a title, then the code would look like this instead:
 
 ```jekyll
