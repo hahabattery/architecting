@@ -1,9 +1,8 @@
 ---
-layout: page
+layout: default
 title: Trouble Shooting
-permalink: /java/trouble-shooting
-author: wonchang
-category: java
+parent: Java
+nav_order: 20
 ---
 
 예외적인 케이스에 대한 정리
