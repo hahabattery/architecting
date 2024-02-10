@@ -3,7 +3,7 @@ layout: default
 title: JPA Overview
 grand_parent: Springs
 parent: Spring JPA
-nav_order: 4
+nav_order: 1
 ---
 
 

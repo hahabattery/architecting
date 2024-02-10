@@ -3,7 +3,7 @@ layout: default
 title: Spring Boot Overview
 grand_parent: Springs
 parent: Spring Boot
-nav_order: 4
+nav_order: 1
 ---
 
 

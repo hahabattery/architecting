@@ -28,7 +28,7 @@ nav_order: 4
 
 
 참고로 아래 그림은 Entity Manager를 Constructor Injection으로 세팅하는 경우. Autowired 어노테이션은 생략가능하다.
-![](./docs/entitymanager_constructor_injection.png)
+![](/images/spring-jpa/entitymanager_constructor_injection.png)
 
 => "multi datasource entity manager constructor injection" <= 이 키워드로 검색해보자
 
