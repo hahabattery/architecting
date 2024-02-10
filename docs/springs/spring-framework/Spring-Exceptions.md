@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Spring Exceptions
+grand_parent: Springs
 parent: Spring Frameworks
 nav_order: 4
 ---

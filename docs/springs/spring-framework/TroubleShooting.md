@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Trouble Shooting
+grand_parent: Springs
 parent: Spring Frameworks
 nav_order: 4
 ---
