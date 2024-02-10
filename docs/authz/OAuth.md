@@ -2,7 +2,7 @@
 layout: default
 title: OAuth
 permalink: /authz/oauth
-parent: Authentication And Autorization
+parent: Authentication And Authorization
 ---
 
 # OAuth Authorization Server

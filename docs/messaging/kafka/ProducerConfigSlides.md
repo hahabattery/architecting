@@ -1,10 +1,11 @@
 ---
-layout: page
+layout: default
 title: Kafka - Producer Config Slides
-permalink: /messaging/kafka/producer-config-slides
-author: wonchang
-category: messaging
+nav_order: 3
+grandparent: Messaging
+parent: kafka
 ---
+
 
 ![](/images/messaging/kafka/producer-config-01.png)
 ![](/images/messaging/kafka/producer-config-02.png)

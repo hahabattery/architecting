@@ -1,11 +1,10 @@
 ---
-layout: page
+layout: default
 title: Kafka - Basic Knowledges
-permalink: /messaging/kafka/basic-slides
-author: wonchang
-category: messaging
+nav_order: 3
+grandparent: Messaging
+parent: kafka
 ---
-
 ![](/images/messaging/kafka/basic-01.png)
 ![](/images/messaging/kafka/basic-02.png)
 ![](/images/messaging/kafka/basic-03.png)
