@@ -1,9 +1,9 @@
 ---
-layout: page
+layout: default
 title: IntelliJ
-permalink: /tools/editors/intellij
-author: wonchang
-category: tools
+grand_parent: Tools
+parent: Editors
+nav_order: 4
 ---
 
 

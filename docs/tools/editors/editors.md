@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Springs
+title: Editors
 nav_order: 3
 has_children: true
-permalink: /docs/springs
+parent: Tools
+permalink: /docs/tools/editors
 ---

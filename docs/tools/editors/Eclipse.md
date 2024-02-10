@@ -1,9 +1,9 @@
 ---
-layout: page
+layout: default
 title: Eclipse
-permalink: /tools/editors/eclipse
-author: wonchang
-category: tools
+grand_parent: Tools
+parent: Editors
+nav_order: 4
 ---
 
 # Eclipse

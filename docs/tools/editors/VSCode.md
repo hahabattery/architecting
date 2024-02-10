@@ -1,9 +1,9 @@
 ---
-layout: page
+layout: default
 title: Visual Studio Code
-permalink: /tools/editors/vscode
-author: wonchang
-category: tools
+grand_parent: Tools
+parent: Editors
+nav_order: 4
 ---
 
 # VSCode

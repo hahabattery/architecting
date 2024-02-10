@@ -1,9 +1,9 @@
 ---
-layout: page
+layout: default
 title: XCode
-permalink: /tools/editors/xcode
-author: wonchang
-category: tools
+grand_parent: Tools
+parent: Editors
+nav_order: 4
 ---
 
  * 파일에서 찾기 / 바꾸기

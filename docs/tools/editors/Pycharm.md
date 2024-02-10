@@ -1,9 +1,9 @@
 ---
-layout: page
-title: PyCharm
-permalink: /tools/editors/pycharm
-author: wonchang
-category: tools
+layout: default
+title: Pycharm
+grand_parent: Tools
+parent: Editors
+nav_order: 4
 ---
 
 # PyCharm 설정 내용

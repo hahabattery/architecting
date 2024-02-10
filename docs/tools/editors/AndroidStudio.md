@@ -1,9 +1,9 @@
 ---
-layout: page
+layout: default
 title: Android Studio
-permalink: /tools/editors/androidstudio
-author: wonchang
-category: tools
+grand_parent: Tools
+parent: Editors
+nav_order: 4
 ---
 
 ### 소스 따라가기
