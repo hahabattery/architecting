@@ -2,8 +2,8 @@
 layout: default
 title: Kafka - Basic Knowledges
 nav_order: 3
-grandparent: Messaging
-parent: kafka
+grand_parent: Messaging
+parent: Kafka
 ---
 ![](/images/messaging/kafka/basic-01.png)
 ![](/images/messaging/kafka/basic-02.png)

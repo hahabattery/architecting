@@ -2,7 +2,7 @@
 layout: default
 title: Kafka Basics
 nav_order: 3
-grandparent: Messaging
+grand_parent: Messaging
 parent: Kafka
 ---
 

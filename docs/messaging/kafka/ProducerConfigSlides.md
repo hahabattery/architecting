@@ -2,8 +2,8 @@
 layout: default
 title: Kafka - Producer Config Slides
 nav_order: 3
-grandparent: Messaging
-parent: kafka
+grand_parent: Messaging
+parent: Kafka
 ---
 
 
