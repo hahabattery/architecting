@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Differences between Spring Framework and Spring Boot
+title: Spring Framework VS Spring Boot
 parent: Springs
 nav_order: 22
 ---
