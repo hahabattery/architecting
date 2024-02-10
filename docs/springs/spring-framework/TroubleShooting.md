@@ -1,4 +1,9 @@
-
+---
+layout: default
+title: Trouble Shooting
+parent: Spring Frameworks
+nav_order: 4
+---
 
 운영중에 발생하는 여러 이슈들
 

@@ -1,3 +1,10 @@
+---
+layout: default
+title: Transaction Propagation
+parent: Spring Frameworks
+nav_order: 4
+---
+
 propagation 관련 해서 내용이 많아서 별도 파일로 정리함.
 
 

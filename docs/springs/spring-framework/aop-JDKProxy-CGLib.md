@@ -1,3 +1,10 @@
+---
+layout: default
+title: AOP JDKProxy CGLib
+parent: Spring Frameworks
+nav_order: 4
+---
+
 Spring에서 사용하는 AOP관련 2가지 구현체는 JDK Proxy(Dynamic Proxy)와 CGLib가 있다.
 
 # 리소스

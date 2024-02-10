@@ -1,3 +1,9 @@
+---
+layout: default
+title: AOP AspectJ
+parent: Spring Frameworks
+nav_order: 4
+---
 
 AspectJ는 Spring과 별도의 라이브러리임.
 

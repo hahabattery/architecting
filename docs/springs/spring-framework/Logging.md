@@ -1,3 +1,9 @@
+---
+layout: default
+title: Logging
+parent: Spring Frameworks
+nav_order: 4
+---
 
 Logging 프레임워크는 log4j -> logback -> log4j2 순서로 등장함.
 

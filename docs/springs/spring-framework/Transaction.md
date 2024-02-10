@@ -1,4 +1,9 @@
-
+---
+layout: default
+title: Transaction
+parent: Spring Frameworks
+nav_order: 4
+---
 
 
 # 다수의 트랜잭션이 경쟁시 발생할 수 있는 문제
