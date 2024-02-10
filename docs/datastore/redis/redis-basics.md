@@ -2,7 +2,7 @@
 layout: default
 title: Redis Basics
 nav_order: 3
-grandparent: Datastore
+grand_parent: Datastore
 parent: Redis
 ---
 
