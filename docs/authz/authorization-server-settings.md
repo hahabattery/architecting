@@ -1,8 +1,8 @@
 ---
 layout: default
-title: OAuth
-permalink: /authz/oauth
+title: Authorization Server Settings
 parent: Authentication And Authorization
+nav_order: 3
 ---
 
 # OAuth Authorization Server
