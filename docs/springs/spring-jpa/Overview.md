@@ -10,22 +10,35 @@ nav_order: 1
  * JPA는 동시성에 대한 것은 모두 데이터베이스의 트랜잭션 처리에 위임함.
 
 
+# JPA vs Hibernate
+Hibernate는 JPA의 구현체중의 하나이다. Hibernate의 동작의 특성을 정리한다.
+
+
+JPA는 기술 명세이다. JPA에 대해서 정리한다.
+
+ * JPA 는 인터페이스
+ * hibernate는 구현체  
+   + https://hibernate.org/orm/releases/ <= hibernate의 릴리즈 노트 (구현한 JPA 버전정보를 확인할 수 있다)
+ 
+### 관련 패키지
+
+ * javax.persistence 로 시작하는 패키지는 JPA의 스펙에 해당하는 인터페이스
+
+
+
 # 리소스
  * [Spring-Jpa Best Practices](https://github.com/cheese10yun/spring-jpa-best-practices)
+
+
+# 네이밍 룰
+https://www.baeldung.com/hibernate-naming-strategy
+
 
 
 # 어플리케이션의 DB계정 권한
  * hibernate.hbm2ddl.auto 옵션을 운영서버에서는 사용하지 않는 것이 좋고,
  * 더 좋은 것은 어플리케이션의 DB계정 권한에서 Create / Drop / Alter TABLE 를 주지 않는 것이 좋다.  
 
-
-
-
----
-# Logging
- * slf4j 는 인터페이스
- * logging-back이나 log4j가 실제 구현체로
- * slf4j와 함께 설정만으로 실제 구현체는 바꿀 수가 있다. logging-back을 많이 쓴다고 한다.
 
 # application.yml 설정관련 노트
  * jpa.hibernate.ddl-auto : create

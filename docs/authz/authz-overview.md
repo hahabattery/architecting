@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Authentication And Authorization Overview
+title: Overview
 parent: Authentication And Authorization
 nav_order: 1
 ---

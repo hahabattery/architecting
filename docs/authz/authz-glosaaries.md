@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Authorization Server Settings Glossaries
+title: Glossaries
 parent: Authentication And Authorization
 nav_order: 3
 ---

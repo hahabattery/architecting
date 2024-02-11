@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Spring Security Overview
+title: Overview
 grand_parent: Springs
 parent: Spring Security
-nav_order: 4
+nav_order: 1
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Authorization Server Settings PCKE
+title: PCKE
 parent: Authentication And Authorization
 nav_order: 3
 ---

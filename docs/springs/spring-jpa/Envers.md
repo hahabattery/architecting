@@ -1,3 +1,11 @@
+---
+layout: default
+title: Envers
+grand_parent: Springs
+parent: Spring JPA
+nav_order: 4
+---
+
 hibernate 에서 만든 데이터 변경 이력을 로깅하기 위한 라이브러리
 
 # 세팅

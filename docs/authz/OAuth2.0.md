@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Authorization Server Settings OAuth 2.0
+title: OAuth 2.0
 parent: Authentication And Authorization
 nav_order: 3
 ---

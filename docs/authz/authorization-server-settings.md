@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Authorization Server Settings
+title: Use Case
 parent: Authentication And Authorization
 nav_order: 3
 ---
