@@ -356,10 +356,12 @@ RUN curl http://source.file/package.file.tar.gz \
 
 
 ### 디렉토리 복사시 예
+
 ```cmd
 ADD go /usr/local/
 ```
-will copy the contents of your local go directory in the /usr/local/ directory of your docker image.
+
+This will copy the contents of your local go directory in the /usr/local/ directory of your docker image.
 
 To copy the go directory itself in /usr/local/ use:
 
@@ -369,19 +371,15 @@ or
 COPY go /usr/local/go
 ```
 
-
-
----
 # WORKDIR
 - 도커파일 뒤에 오는 모든 지시자(RUN, CMD, COPY, ADD 등)에 대한 작업 디렉토리를 설정
 - 리눅스 명령어의 cd와 비슷한 역할
 - 작업 디렉토리를 별도로 지정하여, 로컬에 있는 파일을 도커 컨테이너로 복사할 때 분리하는데 쓰임
 
-
----
 # MAINTAINER vs LABEL
 
 * MAINTAINER보다 사용용도가 넓은 LABEL을 사용하는 것이 추천됨
+
 ```
 MAINTAINER <name>
 LABEL maintainer="someone@gmail.com" <= LABEL로 변경한 경우
@@ -396,11 +394,14 @@ LABEL creationdate="19 November 2019"
 
 * image tag로 이미지에 push하기 위한 명칭을 할당후 push하게 된다.
   * docker login 명령으로 docker hub에 로그인할 수 있다.
+
 ```
 docker image tag {로컬 이미지이름} {아이디}/{이미지이름}
 docker push {아이디}/{이미지이름}
 ```
----
+
+
+
 # Network
 
 * network 정보 조회
@@ -415,6 +416,7 @@ docker push {아이디}/{이미지이름}
 
  * 포트 체크
    * docker container port <container>
+
 ```
 # docker container run -p 80:80 --name webhost -d nginx
 e436fc046b787ab60b78c1c1126301d0261474aac7396701d20712d4d60d7bd4
@@ -423,12 +425,14 @@ e436fc046b787ab60b78c1c1126301d0261474aac7396701d20712d4d60d7bd4
 ```
 
  * inspect --format
+
 ```
 # docker container inspect --format '{{ .NetworkSettings.IPAddress }}' webhost
 172.17.0.3
 ```
 
 * Create docker network and configure
+
 ```
 # docker network ls
 
@@ -516,6 +520,7 @@ e436fc046b787ab60b78c1c1126301d0261474aac7396701d20712d4d60d7bd4
 
 
 * DNS Round Robin Test
+
 ```
 # docker network create dude
 # docker container run -d --net dude --net-alias search elasticsearch:2
@@ -548,6 +553,7 @@ Address 2: 172.19.0.3 search.dude
 ```
 
 * 생성되있는 container를 실행하고 로그를 확인하는 예
+
 ```
 docker container start ae
 docker container logs -f ae
@@ -560,6 +566,7 @@ docker container logs -f ae
    * Dockerfile이 있는 경로에서 docker image build -t {이미지명}
 
  * image에 접속해서, jdk를 설치하는 예.
+
 ```
 docker container run -it ubuntu
 apt-cache search jdk
@@ -578,6 +585,7 @@ docker run -it myjdkimage <= JDK가 설치되어있는 것을 확인 가능하�
 ### 테스트 케이스
 
  * crash.sh
+
 ```
 #/bin/bash
 sleep 30
@@ -585,6 +593,7 @@ exit 1
 ```
 
  * Dockerfile
+
 ```
 FROM ubuntu:14.04
 ADD crash.sh /
@@ -592,11 +601,13 @@ CMD /bin/bash /crash.sh
 ```
 
  * create container
+
 ```
 sudo docker build -t testing_restarts ./
 ```
 
  * image by executing
+
 ```
 sudo docker run -d --name testing_restarts testing_restarts
 ```
@@ -607,6 +618,7 @@ sudo docker run -d --name testing_restarts testing_restarts
  * --restart always
    * 프로그램이 죽는 경우나, 리부팅할 때도 기동됨
    * 매번 재기동 되는 것이 싫다면, unless-stopped 으로
+
 ```
 sudo docker run -d --name testing_restarts --restart always testing_restarts
 ```
@@ -621,6 +633,7 @@ sudo docker run -d --name testing_restarts --restart always testing_restarts
  * --restart on-failure
    * Restarting on failure but stopping on success
    * 리부팅할 때도 최종 반환값이 0이 아닌 경우에는 기동됨.
+
 ```
 sudo docker run -d --name testing_restarts --restart on-failure testing_restarts
 혹은 아래처럼 횟수를 지정할 수 있다. 지정하지 않으면 횟수는 무제한이다.
@@ -667,6 +680,7 @@ sudo docker run -d --name testing_restarts --restart on-failure:5 testing_restar
 
 
 ### Timezone 변경
+
 ```
 docker run --name felis-mysql-5.7.29 -p 3307:3306 -v /etc/localtime:/etc/localtime:ro -e TZ=Asia/Seoul -v /home/sdev/docker_volumes/mysql-5.7:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=manager -d mysql:5.7.29
 
@@ -683,7 +697,8 @@ docker run
  https://stackoverflow.com/questions/19104847/how-to-generate-a-dockerfile-from-an-image
 
   * docker history
- ```
+ 
+```
  docker history --no-trunc $argv  | tac | tr -s ' ' | cut -d " " -f 5- | sed 's,^/bin/sh -c #(nop) ,,g' | sed 's,^/bin/sh -c,RUN,g' | sed 's, && ,\n  & ,g' | sed 's,\s*[0-9]*[\.]*[0-9]*\s*[kMG]*B\s*$,,g' | head -n -1
 
  tac : reverse the file
@@ -694,10 +709,10 @@ sed 's,^/bin/sh -c,RUN,g'                       remove /bin/sh calls for RUN
 sed 's, && ,\n  & ,g'                           pretty print multi command lines following Docker best practices
 sed 's,\s*[0-9]*[\.]*[0-9]*\s*[kMG]*B\s*$,,g'      remove layer size information
 head -n -1                                      remove last line ("SIZE COMMENT" in this case)
-
- ```
+```
 
   * chenzj/dfimage 이용하는 방법
+ 
  ```
  docker pull chenzj/dfimage
 alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm chenzj/dfimage"
