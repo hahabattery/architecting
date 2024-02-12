@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Laws
-parent: Authentication And Authorization
+parent: Security
 nav_order: 3
 ---
 
