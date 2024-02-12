@@ -74,8 +74,8 @@ var
 
 * Dockerfile의 WORKDIR 은 디렉토리가 없으면, 자동으로 만들어 준다.
 
-
  * basic commands
+
 ```
 docker run --name mongo -d mongo
 docker container run   -d -p 3306:3306 --name db_test01 -e MYSQL_RANDOM_ROOT_PASSWORD=yes mysql
@@ -95,6 +95,7 @@ docker container stats
  * docker ps --no-trunc 요약안하는 옵션
 
  * interactive interface
+
 ```
 docker container run -it --name proxy nginx bash
 ```
@@ -109,7 +110,7 @@ root@f81fa44acf84:/#
 ```
 
 
----
+
 # CMD vs ENTRYPOINT
 ### CMD
  * 컨테이너가 시작될 때 실행
@@ -117,6 +118,7 @@ root@f81fa44acf84:/#
    * 마지막 CMD만 사용
  * CMD ["실행 파일", "매개 변수", "매개 변수 ..."]
  * container 에서 서비스 실행시에 사용
+ 
  ```
  CMD ["java", "-jar", "testprogram.jar"]
  ```
@@ -133,6 +135,7 @@ root@f81fa44acf84:/#
 
 
 ### TEST 1
+
 ```
 FROM debian:jessie-slim
 
@@ -210,6 +213,7 @@ CMD echo "envirment = ${NAME_ENV:-WonChul}" \
 ```
 
 1. override 안했을 때(build, run)
+
 ```
 $ docker build -t basic . # build
 # 결과
@@ -227,6 +231,7 @@ argument = WonChul
 ```
 
 2. override 했을 때(build, run)
+
 ```
 $ docker build -t basic --build-arg NAME_ARG=WONCHUL . # build
 # 결과
