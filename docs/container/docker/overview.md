@@ -357,7 +357,7 @@ RUN curl http://source.file/package.file.tar.gz \
 
 ### 디렉토리 복사시 예
 
-```cmd
+```
 ADD go /usr/local/
 ```
 
@@ -365,7 +365,7 @@ This will copy the contents of your local go directory in the /usr/local/ direct
 
 To copy the go directory itself in /usr/local/ use:
 
-```cmd
+```
 ADD go /usr/local/go
 or
 COPY go /usr/local/go
