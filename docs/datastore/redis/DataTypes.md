@@ -27,5 +27,5 @@ allows the representation of numbers between 10−308 and 10308, with full 15–
 Basically, Redis Rank (ZSet) sorts based on the score, and if there are tiebreakers, it sorts again based on the key. Redis does not provide support for other tiebreaker criteria, so it needs to be handled at the server application level.
 
 
-
-
+10점 5점 5점 5점의 score를 가진 4명이 존재한다면  랭킹확인시 5점 3명은 2등으로 표시되길 원하기 때문이다.
+이러한 문제를 해결하고자 reverseRangeByScore메서드를 사용할 수 있다. 이 메서드를 사용하면 원하는 score 범위의 value값을 원하는 갯수만큼 가져올 수 있는 기능을 한다. 하지만 위에서 Sorted Set은 score가 같을때 value값을 기준으로 정렬하기 때문에, 따라서 나의 점수와 같은 사람들 중 등수가 제일 높은사람의 등수를 반환할 수 있는 처리를 해서 동일 순위를 구할 수 있다.

@@ -31,11 +31,14 @@ KeyCloak은 오픈소스(redhat 자회사인 jboss 의해서 유지보수된다�
 
 
 # Resources
+ * "keycloak sever administration guide"
  * https://www.baeldung.com/spring-boot-keycloak
    + 그래도 최신버전(v20)을 다루고 있음.
  * [AWS 에서 Keycloak 기반 서비스 인증 체계 구축 하기 (1편) - 키클록(Keycloak) 이란?](https://devocean.sk.com/blog/techBoardDetail.do?ID=165131)
    + => 이거 꽤 볼만할 수 있다.
 
+# liquidate
+keycloak은 liquidate(such as flyway)라는 migration tool을 이용한다.
 
 # Udemy Spring Security 강의에서 나온 간단한 시나리오
 
