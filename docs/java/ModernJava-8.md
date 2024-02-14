@@ -239,7 +239,8 @@ Java 8 버전에 대한 요약
 
  * Period
 Period 클래스는 두 날짜 사이의 간격을 년/월/일 단위로 나타낸다.
-```java
+
+```Java
 LocalDate startDate = LocalDate.of(1939, 9, 1);
 LocalDate endDate = LocalDate.of(1945, 9, 2);
 
@@ -255,6 +256,7 @@ Days: 1
 ```
 
 시작 날짜와 종료 날짜 없이 of() 메서드를 통해서 바로 Period 객체를 생성가능함
+
 ```java
 Period period = Period.of(6, 0, 1);
 
@@ -268,6 +270,7 @@ Days: 1
 ```
 
 Peroid은 PnYnMnD 포멧을 사용하고 있으며, parse() 정적 메소드를 사용해서 객체 생성 가능하다
+
 ```java
 Period period = Period.parse("P6Y1D");
 System.out.println(period);
@@ -286,6 +289,7 @@ Days: 1
 
  * Duration
 Duration 클래스는 두 시간 사이의 간격을 초나 나노 초 단위로 나타낸다.
+
 ```java
 LocalTime start = LocalTime.of(10, 35, 40);
 LocalTime end = LocalTime.of(10, 36, 50, 800);
@@ -300,6 +304,7 @@ Nano Seconds: 800
 ```
 
 시작 시간과 종료 시간 없이 Duration 클래스의 ofXxx() 정적 메서드를 사용하면 다음과 같이 바로 Duration 클래스를 생성할 수 있습니다. Duration 클래스를 통해 제어할 수 있는 가장 큰 시간 단위는 “일” 입니다. 그보다 큰 시간 단위는 Period 클래스를 통해서 제어가 가능하며 다음 섹션에서 자세히 다루도록 하겠습니다.
+
 ```java
 Duration ofMinutes = Duration.ofMinutes(1);
 System.out.printf("1 minute is %d seconds\n", ofMinutes.getSeconds());
@@ -316,6 +321,7 @@ System.out.printf("1 day is %d seconds\n", ofDays.getSeconds());
 ```
 
 Duration은 PnDTnHnMn.nS 포멧을 사용하고 있으며, parse() 정적 메소드를 사용해서 이 포멧을 따르는 문자열로 부터 객체를 생성할 수 있다.
+
 ```java
 Duration duration = Duration.parse("PT10H36M50.008S");
 System.out.println(duration);
@@ -328,6 +334,7 @@ Seconds: 38210, Nano Secodns: 8000000
 ![](/images/java/duration-2.png)
 
  * Period와 Duration의 이용방식예제
+
 ```
 // get the calendar period between the times (years, months & days)
 Period period = Period.between(start.toLocalDate(), end.toLocalDate());
