@@ -199,7 +199,6 @@ Java 8 버전에 대한 요약
 
 ![](/images/java/datetime-java8-1.png)
 
-# LocalDate, LocalTime, LocalDateTime
 
 ### Calendar, Date 클래스의 문제점 (출처 : https://d2.naver.com/helloworld/645609 )
 
