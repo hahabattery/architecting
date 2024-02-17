@@ -41,6 +41,7 @@ Exclusive lock(X)은 write에 대한 lock이다. select for update 나 update, d
 record lock은 row가 아니라 index record에 걸리는 lock이다. 여기에도 s lock 과 x lock이 존재한다.
 
 대표적을 select ... for upate로 조회하여 lock을 거는 경우인데, 예를 들면 다음과 같이 쿼리를 조회했다고 하자
+
 ```sql
 select id, payment from sales where id=10 for update;
 ```
@@ -50,6 +51,7 @@ select id, payment from sales where id=10 for update;
 update sales set payment=20 where id=10;
 ```
 또는
+
 ```sql
 select payment from sales where id=10;
 ```
@@ -63,6 +65,7 @@ select payment from sales where id=10;
 index record의 gap에 걸리는 lock이다. gap 이란 index 중 db에 실제 record가 없는 부분을 말한다.
 
 예를 들어 Id 칼럼에 1, 5, 10이라는 값이 있고, 중간값이 비어있다고 가정하자. (2,3,4,6,7,8,9는 비어있다) 이때 다음과 같은 쿼리를 실행한다.
+
 ```sql
 select id from sales where id between 1 and 10 for update;
 ```
@@ -87,6 +90,7 @@ mysql 8.0 버전은 performance_schema 스키마에 저장된다.
 ### ISOLATION LEVEL(REPEATABLE-READ)
 
  * inno db 테이블
+
 ```
 mysql> show create table procedure_test;
 +----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -124,6 +128,7 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 
  * 위의 트랜잭션이 커밋되지 않은 상태에서는 모든 레코드의 update가 락이 걸림
+
 ```
 mysql> update procedure_test set rate=rate+1 where memId='test01@naver.com';
 ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
@@ -134,6 +139,7 @@ ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
 
 
  * 인덱스 추가후, 다시 트랜잭션에서 UPDATE
+
 ```
 mysql> ALTER TABLE procedure_test ADD INDEX (memid);
 Query OK, 4 rows affected (0.03 sec)
@@ -145,6 +151,7 @@ Rows matched: 1  Changed: 1  Warnings: 0
 ```
 
 *  다른 클라이언트에서 업데이트시도(인덱스가 다른 경우에는 락이 걸리지 않음)
+
 ```
 mysql> update procedure_test set rate=rate+1 where memId='test01@naver.com';
 ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
@@ -164,6 +171,7 @@ Rows matched: 1  Changed: 1  Warnings: 0
 그래서 dead lock이 걸릴 때 대안으로 READ-COMMITTED으로 변경하는 것도 이 이유라 할 수 있겠다.
 
 Mysql에서 기본값이 REPEATABLE-READ으로 되어있다보니 개발을 어떻게 하느냐에 따라 다음의 에러가 발생할 수 있다.
+
 ```
 ERROR 1213 (40001): Deadlock found when trying to get lock; try restarting transaction
 ```
