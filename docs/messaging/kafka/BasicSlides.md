@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Kafka - Basic Knowledges
+title: Kafka - Basic Slides
 nav_order: 3
 grand_parent: Messaging
 parent: Kafka
