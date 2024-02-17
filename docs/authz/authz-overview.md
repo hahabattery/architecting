@@ -80,7 +80,7 @@ Authorization: Bearer <token>
 
 # opaque token vs jot token
 
-Gooogle은 access token으로 opaque token을 사용하고, Keycloak이나 okta는 jot token(jwt) 를 이용한다.
+Gooogle / GitLab 은 access token으로 opaque token을 사용하고, Keycloak이나 okta는 jot token(jwt) 를 이용한다.
 6:03
 Opaque토큰을 이용하면 인증서버로 가서 확인을 해야하기 때문에 리소스 사용량은 jot token이 보다 더 적다.
 
