@@ -14,6 +14,7 @@ parent: MySQL
 
 
  * 초기 스키마 생성서 자주 사용하는
+  
 ```SQL
 create database batch_db;
 create user sdev@'%' identified by 'sdev123!@#';
@@ -25,6 +26,7 @@ flush privileges;
 
 
  * 테이블 맨앞에 auto increment 쿼리 추가하기
+
 ```SQL
 ALTER TABLE `TableName` ADD COLUMN `seq` INT AUTO_INCREMENT UNIQUE FIRST;
 ```
@@ -36,11 +38,13 @@ ALTER TABLE `TableName` ADD COLUMN `seq` INT AUTO_INCREMENT UNIQUE FIRST;
 
 
 테이블 기준 확인
+
 ```SQL
 select * from information_schema.table_constraints where table_name = '테이블명';
 ```
 
 데이터베이스 기준 확인
+
 ```SQL
 select * from information_schema.table_constraints where constraint_schema = '데이터베이스명';
 ```
@@ -51,12 +55,14 @@ select * from information_schema.table_constraints where constraint_schema = '�
 
 
  * 기본 명령
+
 ```SQL
 SHOW PROCEDURE STATUS;
 SHOW CREATE PROCEDURE curtest;
 ```
 
  * 테스트데이터
+
 ```SQL
 DROP TABLE procedure_test IF EXISTS;
 CREATE TABLE procedure_test (
@@ -94,6 +100,7 @@ DELIMITER ;
 ```
 
 * 다중 변수 + dynamic SQL
+
 ```SQL
 CREATE TABLE table1(
   column1 VARCHAR(255) DEFAULT NULL,
@@ -134,6 +141,7 @@ SELECT @Param2, @Param3;
 ```
 
  * INOUT test
+
 ```SQL
 DELIMITER $$
 CREATE PROCEDURE set_counter(INOUT count INT(4),IN inc INT(4))
@@ -151,6 +159,7 @@ SELECT @COUNTER;
 
 
  * 커서 심플 예제
+
 ```SQL
 DELIMITER $$
 CREATE PROCEDURE curtest()
@@ -200,6 +209,7 @@ DELIMITER ;
 ```
 
  * 다중값 반환 예제
+
 ```SQL
 DROP PROCEDURE get_order_by_cust;
 DELIMITER $$
@@ -240,6 +250,7 @@ SELECT @CUR_COUNTER, @CANCELED_CNT, @RESOLVED_CNT, @DISPUTED_CNT;
 ### 계산
 
  *  difference in exact and approximate value handling
+
 ```SQL
 drop procedure calAddDecimal;
 
@@ -309,12 +320,14 @@ mysql> select * from decimal_test;
 # Timezone
 
  * timezone 확인
+
 ```SQL
 select @@global.time_zone, @@session.time_zone
 ```
  
 
  * 타임존 변경(재기동시에 원복됨)
+
 ```SQL
 SET GLOBAL time_zone='Asia/Seoul';
 SET time_zone='Asia/Seoul';
@@ -333,6 +346,7 @@ SET time_zone='Asia/Seoul';
    * timestamp
 
  * 그 외 데이터타입은 시간대 정보를 저장하지 않음
+
 ```SQL
 select now(); <= 현재의 타임존 정보로 생성 정보를 문자열로 저장함.
 ```
@@ -353,11 +367,13 @@ select now(); <= 현재의 타임존 정보로 생성 정보를 문자열로 저
 # Backup and Restore
 
 Take the dump from the remote RDS Server:
+
 ```
 mysqldump -h rds.hostname -u remote_user_name -p remote_db > dump.sql
 ```
 
 Upload it to your local MySQL instance:
+
 ```
 mysql -u local_user_name -p local_db < dump.sql
 ```
@@ -370,6 +386,7 @@ mysql -u local_user_name -p local_db < dump.sql
 # Replication
 
 ### 상태 확인
+
 ```
 mysql -u아이디 -p패스워드 -e 'SHOW SLAVE STATUS \G' | egrep "Master_Log_Pos|Running|IO_Err|SQL_Err"
 mysql -u아이디 -p패스워드 -e 'SHOW SLAVE STATUS\G' | egrep "Master_Log_Pos|Running|Last|Seconds"
@@ -383,6 +400,7 @@ mysql -u아이디 -p패스워드 -e 'SHOW SLAVE STATUS\G' | egrep "Master_Log_Po
 
 --- 
 # 컬럼 검색
+
 ```SQL
 SELECT * FROM INFORMATION_SCHEMA.COLUMNS A WHERE TABLE_SCHEMA = 'LESSONMON' WHERE A.COLUMN_NAME like '%SNS%';
 ```
@@ -391,6 +409,7 @@ SELECT * FROM INFORMATION_SCHEMA.COLUMNS A WHERE TABLE_SCHEMA = 'LESSONMON' WHER
 # 용량
 
  * 테이블별 row 개수 확인(@Rollback(false) 로 테스트데이터 확인할 때 유용함.)
+
 ```SQL
 SELECT table_name, table_rows FROM information_schema. tables WHERE table_schema = 'testdb' ORDER BY table_name;
 ```

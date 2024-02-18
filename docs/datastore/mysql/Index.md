@@ -68,3 +68,16 @@ RDBMS는 쿼리 사용시 한 테이블에는 1개의 인덱스만 적용 된다
 MySQL버전과 실행 SQL에 의해서도 차이가 있는 것 같다.
 
 중요한 것은 explain으로 미리 동작을 테스트해보는 것이다. 
+
+
+
+# Left Join 시에 on 과where 의 차이점
+
+SQL문에서 ON과 WHERE절의 차이점은 JOIN을 할때 필터링하는 시점이 다르다
+
+on은 JOIN을 하는 시점에 JOIN 대상을 필터링하고, 
+
+where는 JOIN을 하고 난 후에 그 목록을 필터링을 한다.
+
+그래서 left join시에 on을 사용하면 null인 컬럼이 조회된다.
+

@@ -57,6 +57,8 @@ parent: Kafka
 # Configuration
 
 ### client configuration
+ * configure broker:
+   * https://kafka.apache.org/documentation/#brokerconfigs
  * configure producer:
    * https://kafka.apache.org/documentation/#producerconfigs
 

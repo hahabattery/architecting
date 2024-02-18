@@ -6,6 +6,9 @@ grand_parent: Messaging
 parent: Kafka
 ---
 
+# kafka binary install
+
+
 
 ### Start Zookeeper and Kafka
  * config/zookeeper.properties 설정
@@ -23,7 +26,7 @@ parent: Kafka
 ### kafka cli
 
  * topic 생성
-   * kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic first_topic --partitions 3  --replication-factor 1 --create
+   * kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --create --partitions 3 --replication-factor 1
    * --replication-factor는 broker개수보다 클 수 없다.
 
  * 리스트 조회
@@ -93,7 +96,7 @@ new_topic
 
  * consumer group 리스트를 출력해보면, 생각 보다 많은 consumer그룹이 있는 것을 알 수 있다.
    * kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
-   *
+
 ```
 /*
  * consumer-groups.sh 명령으로 그룹명(my-first-application)을 지정해서 상태를 볼 수 있다.
