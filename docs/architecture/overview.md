@@ -49,14 +49,14 @@ microservices.io/patterns/apigateway.html
 
 ---
 ## Modern Development Practices
-![Modern Development Practices](docs/ModernDevelopmentPracticesOverview.png)
+![Modern Development Practices](/images/architecture/ModernDevelopmentPracticesOverview.png)
 - Unit Testing and Mocking : We are in the age of continuous integration and delivery, and the basic thing that enables those is having a good set of unit test in place. (Don’t confuse unit testing with screen testing done manually to check if the screen flow is right. What I mean by unit testing is JUnit test’s checking the business logic/screen flow in a java method (or) set of methods). Understand JUnit. Here is a good start : https://courses.in28minutes.com/p/junit-tutorial-for-beginners. Also understand the concept of Mocking. When should we mock? And when we should not? Complicated question indeed.  Understand one mocking framework : Mockito is the most popular one. Easymock is a good mocking framework as well.
 - Automated Integration Tests. Automated Integration Tests is the second important bullet in enabling continuous delivery. Understand Fitnesse, Cucumber and Protractor.
 - TDD (actually I wanted to put it first). Understand what TDD is. If you have never used TDD, then be ready for a rude shock.  Its not easy to change a routine you developed during decades (or years) of programming. Once you are used to TDD you never go back. I promise. This list of videos is a good start to understanding TDD. https://www.youtube.com/watch?v=xubiP8WoT4E&list=PLBD6D61C0A9F671F6. Have fun.
 - BDD. In my experience, I found BDD a great tool to enable communication between the ready team (Business Analysts, Product Owner) and the done team (Developers, Testers, Operations). When User Stories are nothing but a set of scenarios specified is GWT (Given When Then) format, it is easy for the done team to chew at the user story scenario by scenario.  With tools like Cucumber & Fitnesse, tooling is not far behind too. Do check BDD out.
 - Refactoring. Is there an Architect who does not encounter bad code? Understand refactoring. Understand the role of automation tests in refactoring.
 - Continuous Integration. Every project today has continuous integration. But, the real question is “What is under Continuous Integration?”. Compilation, unit tests and code quality gate(s) is the bare minimum. If you have integration and chain tests, wonderful. But make sure the build does not take long. Immediate feedback is important. If needed, create a separate build scheduled less frequently for slower tests (integration and chain tests). Jenkins is the most popular Continuous Integration tool today.
-![](docs/ModernDevelopmentPractices.png)
+![](/images/architecture/ModernDevelopmentPractices.png)
 
 
 
@@ -69,7 +69,7 @@ microservices.io/patterns/apigateway.html
 ### What are the 4 Principles of Simple Design?
 
 ### Design Focus Areas
-![Focus](docs/Design-Focus.png)
+![Focus](/images/architecture/Design-Focus.png)
 - 4 Principles of Simple Design. https://www.youtube.com/watch?v=OwS8ydVTx1c&list=PL066F8F24976D837C
  - Runs all tests
  - Minimize Duplication
@@ -95,7 +95,7 @@ microservices.io/patterns/apigateway.html
 
 
 ### Design Review
-![Review](docs/DesignReview.png)
+![Review](/images/architecture/DesignReview.png)
 
 ## Architecture
 Details about the important parts of the systems and the constraints (boundaries, communication, standards, guidelines)
@@ -109,7 +109,7 @@ Details about the important parts of the systems and the constraints (boundaries
 - Ensuring teams are as productive as they can be. Right tools.
 - Ensuring teams are following the best engineering practices.
 - Ensuring clear communication about architecture with business and technical teams.
-![Architect Responsibilities](docs/ArchitectResponsibilities.png)
+![Architect Responsibilities](/images/architecture/ArchitectResponsibilities.png)
 
 ### Architect Qualities
 Most important qualities I look for in an Architect are
@@ -117,10 +117,10 @@ Most important qualities I look for in an Architect are
 - Super diagnostic skills : The ability to do a deep dive on a technology issue. When developers are struggling with a problem (having tried different things),  Can he/she provide a fresh pair of eyes to look at the same problem?
 - Forward Thinker and Proactive : Never satisfied with where we are. Identifies opportunities to add value fast.
 - Great Communication :  Communication in the widest sense. Communicating the technical aspects to the stakeholders, project management, software developers, testers, etc.
-![Architect Qualities](docs/ArchitectQualities.png)
+![Architect Qualities](/images/architecture/ArchitectQualities.png)
 
 ### Architecture Review
-![Architecture Review](docs/ArchitectureReview.png)
+![Architecture Review](/images/architecture/ArchitectureReview.png)
 
 ### General
 
@@ -168,7 +168,7 @@ Listed below are some of the important considerations
 - Do we need to expose external web services?
 
 ### Web Services
-![SOAP Web Services](docs/SOAPWebServices.png)
+![SOAP Web Services](/images/architecture/SOAPWebServices.png)
 ![Example Web Service](http://3.bp.blogspot.com/-RSSyK3JhGhw/VVTOQyaX2jI/AAAAAAAAAL8/BZL6jYEZXL4/s640/WebService_BrowserGoogle.png)
 - Service Provider : Google.com is the service provider. Handles the request and sends a response back.
 - Service Consumer : Browser is the service consumer. Creates Request. Invokes Service. Processes the Response.
@@ -302,7 +302,7 @@ Key Differences
 - SOA did not focus on the independent deployability of the components.
 - ESB was brought in to enable loose coupling for SOA based systems. The complexity with the ESBs etc in SOA lead to coining the term “dumb pipes smart endpoints”
 Example:
-![SOA](docs/SOA-For-Sales-App.png)
+![SOA](/images/architecture/SOA-For-Sales-App.png)
 - Consider a banking application selling multiple products
 - Along with Saving Account, a customer gets a Debit Card Free and a Insurance
 Saving Account and Debit Card are different products managed by different product systems
