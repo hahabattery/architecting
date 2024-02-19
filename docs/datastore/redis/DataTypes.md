@@ -13,6 +13,44 @@ parent: Redis
 * ranking
 * first-come, first-served purchase 
  
+### CLI Command
+
+* member 추가하기
+
+```
+ZADD <key> <score> <member>
+```
+
+* member의 score 값 조회하기
+
+```
+ZSCORE <key> <member>
+```
+
+* score 작은 순서로 순위 조회
+index시작은 0부터
+
+```
+$ ZRANGE <key> <시작> <끝>
+```
+
+* score 큰 순서로 순위 조회
+index시작은 0부터
+
+```
+$ ZREVRANGE <key> <시작> <끝>
+```
+
+* score가 큰 순서대로 정렬했을 때 member 순위 조회하기
+
+```
+ZREVRANK <key> <member>
+```
+
+
+
+
+
 
 ### score
 According to the [Redis documentation](https://redis.io/commands/zadd/), a sorted set score is:

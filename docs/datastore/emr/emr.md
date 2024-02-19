@@ -1,8 +1,8 @@
 ---
 layout: default
-title: MySQL
+title: EMR
 nav_order: 3
 has_children: true
 parent: Datastore
-permalink: /docs/datastore/mysql
+permalink: /docs/datastore/emr
 ---
