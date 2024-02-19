@@ -220,8 +220,8 @@ NativeCloud 컨셉에 맞게 최소한 인스턴스 Spec으로 자원 효율성�
 ---
 아래는 기본적인 DynamoDB의 내용
 
-![](/images/datastore/dynamodb/dynamodb-01.png)
-![](/images/datastore/dynamodb/dynamodb-03.png)
+![](../images/datastore/dynamodb/dynamodb-01.png)
+![](../../images/datastore/dynamodb/dynamodb-03.png)
 ![](/images/datastore/dynamodb/dynamodb-04.png)
 ![](/images/datastore/dynamodb/dynamodb-05.png)
 ![](/images/datastore/dynamodb/dynamodb-06.png)
@@ -250,6 +250,6 @@ NativeCloud 컨셉에 맞게 최소한 인스턴스 Spec으로 자원 효율성�
 ![](/images/datastore/dynamodb/dynamodb-29.png)
 ![](/images/datastore/dynamodb/dynamodb-30.png)
 ![](/images/datastore/dynamodb/dynamodb-31.png)
-![](./s3-dynamodb-diff.png)
+![](/images/datastore/dynamodb/s3-dynamodb-diff.png)
 
 
