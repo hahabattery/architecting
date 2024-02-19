@@ -3,8 +3,6 @@ layout: default
 title: Overview
 nav_order: 3
 parent: Architecture
-has_children: true
-permalink: /docs/architecture
 ---
 
 Design Pattern이나 리팩토링같은 상세한 범위보다 더 포괄적인 어플리케이션들 사이의 구조에 대해서 정리한다.
