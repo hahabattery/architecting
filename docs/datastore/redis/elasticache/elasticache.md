@@ -7,17 +7,17 @@ parent: Redis
 ---
 
 
-![](/images/datastore/redis/elastic-cache-01.png)
-![](/images/datastore/redis/elastic-cache-02.png)
-![](/images/datastore/redis/elastic-cache-03.png)
-![](/images/datastore/redis/elastic-cache-04.png)
-![](/images/datastore/redis/elastic-cache-05.png)
-![](/images/datastore/redis/elastic-cache-06.png)
-![](/images/datastore/redis/elastic-cache-07.png)
-![](/images/datastore/redis/elastic-cache-08.png)
-![](/images/datastore/redis/elastic-cache-09.png)
-![](/images/datastore/redis/elastic-cache-10.png)
-![](/images/datastore/redis/elastic-cache-11.png)
+![](../../../images/datastore/redis/elastic-cache-01.png)
+![](../../../images/datastore/redis/elastic-cache-02.png)
+![](../../../images/datastore/redis/elastic-cache-03.png)
+![](../../../images/datastore/redis/elastic-cache-04.png)
+![](../../../images/datastore/redis/elastic-cache-05.png)
+![](../../../images/datastore/redis/elastic-cache-06.png)
+![](../../../images/datastore/redis/elastic-cache-07.png)
+![](../../../images/datastore/redis/elastic-cache-08.png)
+![](../../../images/datastore/redis/elastic-cache-09.png)
+![](../../../images/datastore/redis/elastic-cache-10.png)
+![](../../../images/datastore/redis/elastic-cache-11.png)
 
 
 # Tips

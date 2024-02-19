@@ -164,7 +164,7 @@ So, the following command should work:
  * docker-compose -f ./docker-compose-new.yml -p new_project_name up -d
 
 
-![](/images/container/multiple-docker-composefile-in-same-dir.png)
+![](../../images/container/multiple-docker-composefile-in-same-dir.png)
 
 같은 디렉토리에 2개의 독립적으로 동작하는 컨테이너들을 기동시키는 경우, 디렉토리명으로 이름이 겹쳐서, 위의 그림처럼 관리하기 어려워지는데,
 

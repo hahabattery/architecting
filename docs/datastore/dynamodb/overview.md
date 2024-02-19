@@ -74,7 +74,7 @@ DynamoDB는 테이블 볼륨이 방대해지더라도 항상 일관된 응답시
 ### Sort Key
 정렬키는 Primary Key이지만 테이블 생성 시 선택 입력 사항입니다. 주로 선택적, 범위 조회를 위해 사용하며, 관계 모델링에서 1:n관계와 n:m 관계를 모델링할 수 있습니다.
 
-![](imgs/11_sort_key.png)
+![](../../images/datastore/dynamodb/11_sort_key.png)
 
 위 그림은 AWS 공식 문서에서 권유하는 정렬 키 모범 사례입니다. 정렬 키로 선택/범위 연산이 가능하기 때문에 데이터를 계층적으로 설계하여 해당 계층에 맞는 데이터를 가져올 수 있습니다. 이렇게 적용하면 지리적 위치를 큰 범위부터 작은 범위로 계층적으로 나열하기 때문에 country부터 neighborhood 까지의 데이터를 효과적으로 범위 쿼리할 수 있게됩니다.
 
@@ -85,7 +85,7 @@ DynamoDB는 테이블 볼륨이 방대해지더라도 항상 일관된 응답시
 > DynamoDB는 Real World에서 데이터를 접근하기에 Primary Key(PK + SK)만으로는 부족하기 때문에 보조 인덱스(Secondary Index)를 추가적으로 제공합니다. 보조 인덱스는 LSI (Local Secondary Index)와 GSI(Global Secondary Index) 두 가지로 나뉘어집니다.
 
 ### GSI (Global Secondary Index)
-![](/images/datastore/dynamodb/dynamodb-index-02.png)
+![](../../images/datastore/dynamodb/dynamodb-index-02.png)
 
 
 partition key, sort key까지 자유롭게 어떤 항목이든지 가져와
@@ -110,7 +110,7 @@ GSI는 따로 용량에 대한 제한이 없습니다.
 
 ### LSI (Local Secondary Index)
 
-![](/images/datastore/dynamodb/dynamodb-index-01.png)
+![](../../images/datastore/dynamodb/dynamodb-index-01.png)
 
 partition key를 fix한 상태에서(반드시 파티션키가 포함된다), 이 외의 컬럼에 대해서 Range Key = sort key로 주어 값을 가져오는 것으로,
 
@@ -132,7 +132,7 @@ Secondary Index로 생성하여서 원하는 조건으로 쿼리를 하여 가�
 
 ### LSI와 GSI의 차이점
 
-![](/images/datastore/dynamodb/dynamodb-index-03.png)
+![](../../images/datastore/dynamodb/dynamodb-index-03.png)
 
 ### Eventual Consistent Read와 Strong Consistent Read
 DynamoDB는 리전당 3개의 복제본을 가지고 있는데, 이중에서 가장 빠른 응답을 가지는 복제본을 사용할 수 있다!
@@ -220,36 +220,37 @@ NativeCloud 컨셉에 맞게 최소한 인스턴스 Spec으로 자원 효율성�
 ---
 아래는 기본적인 DynamoDB의 내용
 
-![](../images/datastore/dynamodb/dynamodb-01.png)
+![](../../images/datastore/dynamodb/dynamodb-01.png)
+![](../../images/datastore/dynamodb/dynamodb-02.png)
 ![](../../images/datastore/dynamodb/dynamodb-03.png)
-![](/images/datastore/dynamodb/dynamodb-04.png)
-![](/images/datastore/dynamodb/dynamodb-05.png)
-![](/images/datastore/dynamodb/dynamodb-06.png)
-![](/images/datastore/dynamodb/dynamodb-07.png)
-![](/images/datastore/dynamodb/dynamodb-08.png)
-![](/images/datastore/dynamodb/dynamodb-09.png)
-![](/images/datastore/dynamodb/dynamodb-10.png)
-![](/images/datastore/dynamodb/dynamodb-11.png)
-![](/images/datastore/dynamodb/dynamodb-12.png)
-![](/images/datastore/dynamodb/dynamodb-13.png)
-![](/images/datastore/dynamodb/dynamodb-14.png)
-![](/images/datastore/dynamodb/dynamodb-15.png)
-![](/images/datastore/dynamodb/dynamodb-16.png)
-![](/images/datastore/dynamodb/dynamodb-17.png)
-![](/images/datastore/dynamodb/dynamodb-18.png)
-![](/images/datastore/dynamodb/dynamodb-19.png)
-![](/images/datastore/dynamodb/dynamodb-20.png)
-![](/images/datastore/dynamodb/dynamodb-21.png)
-![](/images/datastore/dynamodb/dynamodb-22.png)
-![](/images/datastore/dynamodb/dynamodb-23.png)
-![](/images/datastore/dynamodb/dynamodb-24.png)
-![](/images/datastore/dynamodb/dynamodb-25.png)
-![](/images/datastore/dynamodb/dynamodb-26.png)
-![](/images/datastore/dynamodb/dynamodb-27.png)
-![](/images/datastore/dynamodb/dynamodb-28.png)
-![](/images/datastore/dynamodb/dynamodb-29.png)
-![](/images/datastore/dynamodb/dynamodb-30.png)
-![](/images/datastore/dynamodb/dynamodb-31.png)
-![](/images/datastore/dynamodb/s3-dynamodb-diff.png)
+![](../../images/datastore/dynamodb/dynamodb-04.png)
+![](../../images/datastore/dynamodb/dynamodb-05.png)
+![](../../images/datastore/dynamodb/dynamodb-06.png)
+![](../../images/datastore/dynamodb/dynamodb-07.png)
+![](../../images/datastore/dynamodb/dynamodb-08.png)
+![](../../images/datastore/dynamodb/dynamodb-09.png)
+![](../../images/datastore/dynamodb/dynamodb-10.png)
+![](../../images/datastore/dynamodb/dynamodb-11.png)
+![](../../images/datastore/dynamodb/dynamodb-12.png)
+![](../../images/datastore/dynamodb/dynamodb-13.png)
+![](../../images/datastore/dynamodb/dynamodb-14.png)
+![](../../images/datastore/dynamodb/dynamodb-15.png)
+![](../../images/datastore/dynamodb/dynamodb-16.png)
+![](../../images/datastore/dynamodb/dynamodb-17.png)
+![](../../images/datastore/dynamodb/dynamodb-18.png)
+![](../../images/datastore/dynamodb/dynamodb-19.png)
+![](../../images/datastore/dynamodb/dynamodb-20.png)
+![](../../images/datastore/dynamodb/dynamodb-21.png)
+![](../../images/datastore/dynamodb/dynamodb-22.png)
+![](../../images/datastore/dynamodb/dynamodb-23.png)
+![](../../images/datastore/dynamodb/dynamodb-24.png)
+![](../../images/datastore/dynamodb/dynamodb-25.png)
+![](../../images/datastore/dynamodb/dynamodb-26.png)
+![](../../images/datastore/dynamodb/dynamodb-27.png)
+![](../../images/datastore/dynamodb/dynamodb-28.png)
+![](../../images/datastore/dynamodb/dynamodb-29.png)
+![](../../images/datastore/dynamodb/dynamodb-30.png)
+![](../../images/datastore/dynamodb/dynamodb-31.png)
+![](../../images/datastore/dynamodb/s3-dynamodb-diff.png)
 
 
