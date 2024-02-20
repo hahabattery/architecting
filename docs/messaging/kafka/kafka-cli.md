@@ -6,6 +6,10 @@ grand_parent: Messaging
 parent: Kafka
 ---
 
+# References
+* https://www.conduktor.io/kafka/kafka-cli-tutorial/
+
+
 # kafka binary install
 
 
@@ -30,13 +34,13 @@ parent: Kafka
    * --replication-factor는 broker개수보다 클 수 없다.
 
  * 리스트 조회
-   * kafka-topics.sh --zookeeper 127.0.0.1:2181 --list
+   * kafka-topics.sh --bootstrap-server localhost:9092 --list
 
  * topic 정보 조회
-   * kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic first_topic --describe
+   * kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --describe
 
  * topic 삭제
-   * kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic second_topic --delete
+   * kafka-topics.sh --bootstrap-server localhost:9092 --topic second_topic --delete
 
 
  * console producer
