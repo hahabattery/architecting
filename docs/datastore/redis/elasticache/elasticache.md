@@ -6,6 +6,10 @@ grand_parent: Datastore
 parent: Redis
 ---
 
+* https://redis.com/wp-content/uploads/2023/11/DATASHEET-Redis-Enterprise-vs-AWS-ElastiCache.pdf
+  
+AWS ElastiCache for Redis provides the ability to take snapshots for data persistence (similar to RDB snapshots). However, support for the Append Only File (AOF) persistence mode was limited or not available.
+
 
 ![](../../../images/datastore/redis/elastic-cache-01.png)
 ![](../../../images/datastore/redis/elastic-cache-02.png)
