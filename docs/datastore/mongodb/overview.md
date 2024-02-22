@@ -22,10 +22,7 @@ parent: MongoDB
  * insert update delete 메소드들의 document
    * https://docs.mongodb.com/manual/reference/method
 
-```
-테스트를 위한 MongoDB atlas의 접속정보
-test20201215 / DS8023d8a
-```
+
 
 # 몽고DB의 적용 케이스
 > 대규모의 데이터를 처리해야 하는데 RDBMS는 성장 한계가 있기 때문에, 일관성과 무결성을 버리고 더 빠른 읽기 성능과 수평확장이 가능한 DB가 필요할 때 , 사용함.
