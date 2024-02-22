@@ -9,41 +9,18 @@ Design Pattern이나 리팩토링같은 상세한 범위보다 더 포괄적인 
 
 ---
 # 리소스들
-[7 Best Places to Learn System Design (with Pictures)](https://javinpaul.gumroad.com/p/7-best-places-to-learn-system-design-with-pictures)
-
----
-# StranglerFigApplication
-* https://martinfowler.com/bliki/StranglerFigApplication.html
-
-
----
-# API Composition
-* https://microservices.io/patterns/data/api-composition.html
-
-
----
-# CQRS
-* https://microservices.io/patterns/data/cqrs.html
-
-
----
-# 12 Factor App
-* https://12factor.net/
-
----
-# The Frugal Architect
-* https://thefrugalarchitect.com/
+* [7 Best Places to Learn System Design (with Pictures)](https://javinpaul.gumroad.com/p/7-best-places-to-learn-system-design-with-pictures)
+* [The Frugal Architect](https://thefrugalarchitect.com/)
+* [12 Factor App](https://12factor.net/)
+* [StranglerFigApplication](https://martinfowler.com/bliki/StranglerFigApplication.html)
+* [API Composition](https://microservices.io/patterns/data/api-composition.html)
+* [CQRS](https://microservices.io/patterns/data/cqrs.html)
+* [API Gateway](https://microservices.io/patterns/apigateway.html)
+* [BFF](https://bff-patterns.com/)
 
 ---
 # Proxy Pattern이란?
 프록시 패턴이란 소프트웨어 디자인 패턴 중 하나로 오리지널 객체(Real Object) 대신 프록시 객체(Proxy Object)를 사용해 로직의 흐름을 제어하는 디자인 패턴이다.
-
-
----
-# API Gateway / Backend for Front-End
-
-microservices.io/patterns/apigateway.html
-
 
 ---
 ## Modern Development Practices
