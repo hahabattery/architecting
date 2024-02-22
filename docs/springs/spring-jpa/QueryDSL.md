@@ -6,6 +6,37 @@ parent: Spring JPA
 nav_order: 4
 ---
 
+docker의 타임존 설정이 없어서 UTC로 동작하는 상황에서 MySQL의 세션 타임존이 KST인 경우에 타임존이 다르기 때문에, 
+아래와 같은 querydsl은 오동작하게 된다.
+
+```java
+BooleanExpression checkBannerValid = banner.isActive.isTrue()
+        .and(banner.startDate.before(LocalDateTime.now()))
+        .and(banner.endDate.after(LocalDateTime.now()));
+```
+
+오동작을 회피하기 위해서는 database의 시간 정보를 어플리케이션이 적용되는 UTC로 바꾸거나, 어플리케이션의 시간 데이터 정보를 KST로 변경처리 해줘야 한다. 아래는 어플리케이션의 시간 데이터 정보를 KST로 변경하는 처리이다. 
+
+first one
+```java
+    // What if directly get time info in KST Using LocalDateTime
+    LocalDateTime nowKstDirect = LocalDateTime.now(ZoneId.of("Asia/Shanghai"));
+```
+
+second one
+```java
+    // What if directly get time info in KST Using ZoneDateTime
+    ZonedDateTime nowKstDirectZoned = ZonedDateTime.now(ZoneId.of("Asia/Shanghai"));
+    LocalDateTime nowKstDirectZonedLocalDateTime = nowKstDirectZoned.toLocalDateTime();
+```
+
+The key difference lies in whether you need to retain the information about the original time zone (Asia/Shanghai) or not. If your use case doesn't require keeping the time zone information, the first code is more concise and straightforward. If you need to work with time zone information later in your code, the second approach might be more suitable.
+
+또한, 타임존 관련 테스트는 시스템 설정을 변경해야 되기 때문에, 꽤나 번거로운데 아래 글에서 타임존 관련 테스트방법을 다루고 있다.
+
+[Overriding System Time for Testing in Java](https://www.baeldung.com/java-override-system-time)
+
+
 # 용어
 
 ### 프로젝션
