@@ -4,7 +4,7 @@ title: Reactor Overview
 description: Provides an overview of Project Reactor, an implementation of the Reactive Stream Specification.
 grand_parent: Java
 parent: Reactive Streams
-nav_order: 1
+nav_order: 2
 ---
 
 Reactor has supported the Reactive Streams standard from version 2.5 milestone (February 2016). Release was marked as version 3.0 in August 2016.
@@ -211,7 +211,7 @@ Publisher가 데이터를 emit하는 과정이 한 번만 일어나도 Subscribe
 
 
 # 전체적은 흐름
-![](../images/java/all-reactive-streams-components.png)
+![](../../images/java/all-reactive-streams-components.png)
 
 1. Subscriber 가 subscribe 메소드를 통해 Publisher 에게 구독을 요청
 2. Publisher 는 onSubscribe 메소드로 Subscriber 에게 Subscription 를 전달
@@ -222,7 +222,7 @@ Publisher가 데이터를 emit하는 과정이 한 번만 일어나도 Subscribe
 
 
 # Processor의 흐름(Publisher와 Subscriber를 혼합)
-![](../images/java/reactive-sptream-components-processor.png)
+![](../../images/java/reactive-sptream-components-processor.png)
 
 Publisher 와 Subscriber 를 혼합한 Processor 라는 것도 있다.
 ```java

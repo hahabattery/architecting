@@ -23,7 +23,7 @@ nav_order: 10
  * -Xms<size> : Java Heap의 최초 크기(Start Size)를 지정한다. Java Heap은 -Xms 옵션으로 지정한 크기로 시작
 
 ##### -Xmx
- * -Xmx<Size> : 최대 Java Heap Size, JVM이 최대 가질 수 있는 메모리이다.
+ * -Xmx<size> : 최대 Java Heap Size, JVM이 최대 가질 수 있는 메모리이다.
 
 
 ##### -XX:PermSize

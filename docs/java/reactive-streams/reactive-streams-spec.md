@@ -4,7 +4,7 @@ title: Reactive Streams Specification
 description: Summarizes the content related to the Reactive Stream Specification.
 grand_parent: Java
 parent: Reactive Streams
-nav_order: 10
+nav_order: 1
 ---
 
 > The purpose of Reactive Streams is to provide a standard for asynchronous stream processing with non-blocking backpressure.
@@ -57,7 +57,7 @@ Thread Pool Size보다 더 많은 사용자의 요청이 온다면 Thread Pool H
   + Pub, Sub 서로 의존하지 않아도 되는 상황
   + 이를 통해 Topic based로 개선되어 다양한 토픽들을 다양한 구독자들에게 전달할 수 있게 된다.
 
-![](/images/java/pub-sub.png)
+![](../../images/java/pub-sub.png)
 
 * Reactive Stream 명세에 따르면 총 4가지 인터페이스로 구성되어있다.
   + Publisher
