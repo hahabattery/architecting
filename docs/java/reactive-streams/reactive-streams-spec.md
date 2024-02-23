@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Reactive Streams
+title: Reactive Streams Specification
 description: Summarizes the content related to the Reactive Stream Specification.
-parent: Java
+grand_parent: Java
+parent: Reactive Streams
 nav_order: 10
 ---
 
