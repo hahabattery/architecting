@@ -1,9 +1,18 @@
 ---
 layout: default
 title: Reactive Streams
+description: Summarizes the content related to the Reactive Stream Specification.
 parent: Java
 nav_order: 10
 ---
+
+> The purpose of Reactive Streams is to provide a standard for asynchronous stream processing with non-blocking backpressure.
+
+
+# Resources
+* https://reactive-streams.org
+
+
 
 # 기본적인 튜토리얼
 https://www.baeldung.com/java-9-reactive-streams
@@ -20,13 +29,6 @@ https://jistol.github.io/software%20engineering/2018/04/11/observer-pubsub-patte
 
 * [Observer Pattern (관찰자, 옵저버, JDK의 Observable, 발행구독과 차이점)](https://sjh836.tistory.com/180)
 * [Reactive Streams (관찰자 결합, 반복자 결합, Back Pressure, 흐름, Processor, 비동기 및 병렬화 구현방식)](https://sjh836.tistory.com/182) <= 리액티브 스트림을 기본적으로 이해해야, Reactor 도 수월하게 이해할 수 있다.
-
-
-
-# Reactive Stream 이란?
-> Reactive Streams is a standard for asynchronous data processing in a streaming fashion with non-blocking back pressure.
-논블로킹(Non-blocking) 백 프레셔(back pressure)를 이용한 비동기 데이터 처리의 표준
-
 
 
 
