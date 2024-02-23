@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Reactive-Streams
+title: Reactive Streams
 nav_order: 3
 parent: Java
 has_children: true
