@@ -37,7 +37,7 @@ https://www.baeldung.com/java-reactor-flux-vs-mono
 
 
 # Publisher interface 의 구현체
-Flux and Mono implemented Publisher interface. 이 둘은 대략적인 카디널리티 정보를 담는 식으로 타입을 구분한다.
+[Flux](https://projectreactor.io/docs/core/release/reference/#flux) and [Mono](https://projectreactor.io/docs/core/release/reference/#mono) implemented Publisher interface. 이 둘은 대략적인 카디널리티 정보를 담는 식으로 타입을 구분한다.
 If 아이템이 0개 아니면 1개라면 Mono can be used.
 Mono의 연산자들은 버퍼 중복, 값비싼 동기화 작업 등이 생략해서 성능적인 이점이 있다.
 But, Flux와 Mono는 서로 쉽게 변환할 수 있다, also.
@@ -205,7 +205,7 @@ Subscriber의 데이터 요청이 완료되면 데이터가 스트림을 통해 
 
 
 # Processor의 흐름(Publisher와 Subscriber를 혼합)
-![](reactive-sptream-components-processor.png)
+![](/images/java/reactive-sptream-components-processor.png)
 
 Publisher 와 Subscriber 를 혼합한 Processor 라는 것도 있다.
 ```java
