@@ -4,7 +4,7 @@ title: Reactor Overview
 description: Provides an overview of Project Reactor, an implementation of the Reactive Stream Specification.
 grand_parent: Java
 parent: Reactive Streams
-nav_order: 10
+nav_order: 1
 ---
 
 Reactor has supported the Reactive Streams standard from version 2.5 milestone (February 2016). Release was marked as version 3.0 in August 2016.
@@ -42,7 +42,6 @@ https://www.baeldung.com/java-reactor-flux-vs-mono
  * https://velog.io/@suhongkim98/%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Reactor%ED%8E%B8-2
    * 내용이 상당히 많다. 추가 정리 필요.
   
- * 
 
 # Publisher interface 의 구현체
 [Flux](https://projectreactor.io/docs/core/release/reference/#flux) and [Mono](https://projectreactor.io/docs/core/release/reference/#mono) implemented Publisher interface. 이 둘은 대략적인 카디널리티 정보를 담는 식으로 타입을 구분한다.

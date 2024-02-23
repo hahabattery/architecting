@@ -8,17 +8,12 @@ nav_order: 10
 운영중에 발생하는 여러 이슈를 대응하기 위한 정보들.
 
 
-
-
-
 # 환경변수
 
  * System.getProperty("변수명"); <= 이코드 정상 동작하기 위해서는  
    * jar실행시에 -D 로 지정하던가
    * 이클립스 내에서는 Run Configuration -> Arguments에 -DVAR_NAME="BLAH"  추가하면 됨.
    * Tomcat 의 경우,  톰캣/conf/catalina.properties 에 추가 (또는 /var/lib/tomcat8/conf/catalina.properties)
-
-
 
 
 
