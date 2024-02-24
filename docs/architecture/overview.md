@@ -17,6 +17,7 @@ Design Pattern이나 리팩토링같은 상세한 범위보다 더 포괄적인 
 * [CQRS](https://microservices.io/patterns/data/cqrs.html)
 * [API Gateway](https://microservices.io/patterns/apigateway.html)
 * [BFF](https://bff-patterns.com/)
+* [Database per service](https://microservices.io/patterns/data/database-per-service.html)
 
 ---
 # Proxy Pattern이란?

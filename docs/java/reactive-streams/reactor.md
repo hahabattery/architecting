@@ -22,13 +22,7 @@ Around the same time, RxJava 2.0, supporting the Reactive Streams standard, was 
 
 
 # 튜토리얼
-[Reactor 의 탄생, 생성과 구독 (역사, Publisher 구현체 Flux와 Mono, defer, Subscriber 직접구현)](https://sjh836.tistory.com/185)
-
-https://www.baeldung.com/reactor-core
-
-https://www.baeldung.com/java-reactor-flux-vs-mono
-
-
+* [Intro To Reactor Core](https://www.baeldung.com/reactor-core)
  * https://github.com/eugenp/tutorials/tree/master/reactor-core
    + => 코드에서 다양한 리액터 관련한 글을 볼 수 있다.
 
@@ -39,8 +33,6 @@ https://www.baeldung.com/java-reactor-flux-vs-mono
  * https://tech.kakao.com/2018/05/29/reactor-programming/
    * 간단한 예제로 flux병령처리 내용도 포함하고 있다.
 
- * https://velog.io/@suhongkim98/%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Reactor%ED%8E%B8-2
-   * 내용이 상당히 많다. 추가 정리 필요.
   
 
 # Publisher interface 의 구현체

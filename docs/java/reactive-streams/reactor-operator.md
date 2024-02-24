@@ -7,6 +7,7 @@ parent: Reactive Streams
 nav_order: 3
 ---
 
+# Flux
 
 * flatMap
   * https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html#flatMap-java.util.function.Function-
