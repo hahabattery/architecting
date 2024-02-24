@@ -62,6 +62,11 @@ Mono<T>.flux() = Flux<T>
 
 publisher 는 구독자가 없으면 가만히 있기 때문에 메모리 부족을 야기하지 않고도 무한대의 리액티브 스트림을 만들 수 있습니다. publisher 인터페이스는 subscribe 라는 추상 메서드를 가집니다. Publisher.subscribe(Subscriber)의 형식으로 data 제공자와 구독자가 연결된다.
 
+참고
+{: .label .label-yellow }
+Flux와 Mono를 직접 생성하기보다는 다른 라이브러리가 제공하는 Flux와 Mono를 사용할 때가 많다. 예를 들어 스프링 5 버전에 추가된 WebClient 클래스를 사용할 때에는 WebClient가 생성하는 Mono를 이용해서 데이터를 처리한다.
+
+
 
 
 ### just VS fromSupplier VS defer
@@ -229,7 +234,7 @@ Publisher가 데이터를 emit하는 과정이 한 번만 일어나도 Subscribe
 5. 전달이 잘 끝났으면, onComplete, 오류났다면 onError 로 끝낸다.
 
 
-# Processor의 흐름(Publisher와 Subscriber를 혼합)
+# Processor (Publisher와 Subscriber를 혼합)
 ![](../../images/java/reactive-sptream-components-processor.png)
 
 Publisher 와 Subscriber 를 혼합한 Processor 라는 것도 있다.
@@ -246,100 +251,10 @@ Publisher 와 Subscriber 를 혼합한 Processor 라는 것도 있다.
 * ex2) 멀티캐스팅
 
 
-# jdk9 Flow
+# Flow (JDK 9)
 리액티브 스트림은 jdk9 에서도 Flow API 로 반영이 되었다.
 
 리액티브 스트림 타입들을 Flow 로도 쉽게 변환이 가능하다. (ex. FlowAdapters)
-
-
-# share()
-share() 오퍼레이터는 원본 Flux를 멀티캐스트하는 새로운 Flux를 리턴하는 오퍼레이터이다.
-
-즉 여러 Subscriber가 하나의 Flux를 공유하도록 합니다. 하나의 원본 Flux를 공유하여 다 같이 사용하기 때문에 어떤 Subscriber가 이 원본 Flux를 먼저 구독해버리면 데이터 emit을 시작하게 되고, 이후에 다른 Subscriber가 구독하는 시점에는 이미 emit된 데이터는 전달받을 수 없게된다.
-
-우리는 share() 오퍼레이터를 통해 Cold Sequence를 Hot Sequence로 동작하게 할 수 있다.
-
-```java
-    @Test
-    @DisplayName("share() Operator를 이용해 Cold Sequence를 Hot Sequence로 동작하게 할 수 있다")
-    void testHotSequence() throws InterruptedException {
-        String[] singers = {"로이킴", "뉴진스", "트와이스", "테일러 스위프트"};
-
-        // 4명의 가수는 2초 간격으로 무대에 나와 노래를 부를 예정입니다.
-        Flux<String> concertFlux = Flux.fromArray(singers)
-                .delayElements(Duration.ofSeconds(2))
-                .share();
-
-		// 첫 관객 관람(구독)을 하여 공연이 시작됐습니다.
-        concertFlux.subscribe(singer -> System.out.printf("[%s] 관객 A가 %s의 무대를 보았습니다.%n", Thread.currentThread(), singer));
-
-        Thread.sleep(2500); //공연 시작 2.5초 뒤.. 관객 B가 관람(구독) 시작
-        concertFlux.subscribe(singer -> System.out.printf("[%s] 관객 B가 %s의 무대를 보았습니다.%n", Thread.currentThread(), singer));
-
-        Thread.sleep(6000);
-    }
-```
-
-```
-[Thread[parallel-1,5,main]] 관객 A가 로이킴의 무대를 보았습니다.
-[Thread[parallel-2,5,main]] 관객 A가 뉴진스의 무대를 보았습니다.
-[Thread[parallel-2,5,main]] 관객 B가 뉴진스의 무대를 보았습니다.
-[Thread[parallel-3,5,main]] 관객 A가 트와이스의 무대를 보았습니다.
-[Thread[parallel-3,5,main]] 관객 B가 트와이스의 무대를 보았습니다.
-[Thread[parallel-4,5,main]] 관객 A가 테일러 스위프트의 무대를 보았습니다.
-[Thread[parallel-4,5,main]] 관객 B가 테일러 스위프트의 무대를 보았습니다.
-```
-다음 테스트코드를 통해 관객 B는 뉴진스의 공연부터 보는걸 볼 수 있습니다.
-
-# cache()
-cache() 오퍼레이터는 Cold Sequence로 동작하는 Mono를 Hot Sequence로 변경해주고, emit된 데이터를 캐시한 뒤 구독이 발생할 때마다 캐시된 데이터를 전달해준다.
-
-```java
-@Test
-    void testCacheHotSequence() throws InterruptedException {
-        var mono = Mono.fromCallable(() -> {
-                    System.out.println("Go!");
-                    return 5;
-                })
-                .map(i -> {
-                    System.out.println("Double!");
-                    return i * 2;
-                });
-
-        var cached = mono.cache();
-
-        System.out.println("Using cached"); // Hot Sequence로 동작한다.
-        System.out.println("1. " + cached.block()); // 최초 한 번 연산
-        System.out.println("2. " + cached.block()); // 캐싱 반환
-        System.out.println("3. " + cached.block()); // 캐싱 반환
-
-        System.out.println("Using NOT cached"); // Cold Sequence로 동작한다.
-        System.out.println("1. " + mono.block()); // 처음부터 다시 동작
-        System.out.println("2. " + mono.block()); // 처음부터 다시 동작
-        System.out.println("3. " + mono.block()); // 처음부터 다시 동작
-    }
-```
-
-```
-Using cached
-Go!
-Double!
-1. 10
-2. 10
-3. 10
-Using NOT cached
-Go!
-Double!
-1. 10
-Go!
-Double!
-2. 10
-Go!
-Double!
-3. 10
-```
-
-테스트 결과를 보면 cache()사용 시 Hot Sequence로 동작하여 호출마다 처음부터 돌지 않고, 2번째 호출부터는 캐시된 값을 반환한다.
 
 
 # BackPressure on Reactor library

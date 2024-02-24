@@ -7,6 +7,16 @@ parent: Reactive Streams
 nav_order: 1
 ---
 
+# Reactive Streams Specification
+{: .no_toc}
+
+# Table of contents
+{: .no_toc .text-delta }
+
+1. TOC 
+{:toc}
+
+
 > The purpose of Reactive Streams is to provide a standard for asynchronous stream processing with non-blocking backpressure.
 
 
@@ -64,6 +74,11 @@ Thread Pool Size보다 더 많은 사용자의 요청이 온다면 Thread Pool H
   + Subscriber
   + Subscription
   + Processor
+
+리액티브 스트림즈는 Publisher를 이용해서 스트림을 정의하며 Subscriber를 이용해서 발생한 신호를 처리한다. Subscriber가 Publisher로부터 신호를 받는 것을 구독이라고 한다. 
+
+* 시퀀스
+리액터는 스트림이라는 용어 대신 시퀀스라는 용어를 주로 사용한다. seq라는 변수명이 자주 나온다.
 
 # Flow Control Problem(back pressure)
 * Push 방식(빠른 Publisher & 느린 Subscriber)
