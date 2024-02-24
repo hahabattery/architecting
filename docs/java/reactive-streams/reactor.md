@@ -8,10 +8,10 @@ nav_order: 2
 ---
 
 # Reactor Overview
-<!-- {: .no_toc} -->
+{: .no_toc}
 
 # Table of contents
-<!-- {: .no_toc .text-delta } -->
+{: .no_toc .text-delta }
 
 1. TOC 
 {:toc}
@@ -218,7 +218,7 @@ Publisher가 데이터를 emit하는 과정이 한 번만 일어나도 Subscribe
 # Processor interface의 구현체
 
 
-# 전체적은 흐름
+# 전체적인 흐름
 ![](../../images/java/all-reactive-streams-components.png)
 
 1. Subscriber 가 subscribe 메소드를 통해 Publisher 에게 구독을 요청
