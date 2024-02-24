@@ -62,8 +62,7 @@ Mono<T>.flux() = Flux<T>
 
 publisher 는 구독자가 없으면 가만히 있기 때문에 메모리 부족을 야기하지 않고도 무한대의 리액티브 스트림을 만들 수 있습니다. publisher 인터페이스는 subscribe 라는 추상 메서드를 가집니다. Publisher.subscribe(Subscriber)의 형식으로 data 제공자와 구독자가 연결된다.
 
-참고
-{: .label .label-yellow }
+Tip {: .label .label-yellow } <BR>
 Flux와 Mono를 직접 생성하기보다는 다른 라이브러리가 제공하는 Flux와 Mono를 사용할 때가 많다. 예를 들어 스프링 5 버전에 추가된 WebClient 클래스를 사용할 때에는 WebClient가 생성하는 Mono를 이용해서 데이터를 처리한다.
 
 
