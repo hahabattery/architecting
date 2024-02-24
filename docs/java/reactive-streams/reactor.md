@@ -7,8 +7,8 @@ parent: Reactive Streams
 nav_order: 2
 ---
 
-# Lists
-{: .no_toc}
+# LReactor Overview
+<!-- {: .no_toc} -->
 
 # Table of contents
 {: .no_toc .text-delta }
