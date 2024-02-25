@@ -16,6 +16,8 @@ nav_order: 3
 1. TOC 
 {:toc}
 
+Using Reactor Netty, you can create network programs based on Netty with the Reactor API. By leveraging Reactor Netty, you can develop asynchronous network programs with more concise code compared to using Netty directly.
+
 # Resources
 * [Reactor Netty Workshop](https://violetagg.github.io/reactor-netty-workshop/)
   *  https://github.com/violetagg/reactor-netty-workshop

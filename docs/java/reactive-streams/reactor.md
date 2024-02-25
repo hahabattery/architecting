@@ -45,8 +45,8 @@ Around the same time, RxJava 2.0, supporting the Reactive Streams standard, was 
  * https://tech.kakao.com/2018/05/29/reactor-programming/
    * 간단한 예제로 flux병령처리 내용도 포함하고 있다.
 
- * https://velog.io/@suhongkim98/%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Reactor%ED%8E%B8-2
-   * 내용이 상당히 많다. 추가 정리 필요.
+ * https://javacan.tistory.com/entry/spring-reactor-intro-list
+   * 가장 최근에 보던 글
   
 
 # Publisher interface 의 구현체
@@ -62,11 +62,13 @@ Mono<T>.flux() = Flux<T>
 
 publisher 는 구독자가 없으면 가만히 있기 때문에 메모리 부족을 야기하지 않고도 무한대의 리액티브 스트림을 만들 수 있습니다. publisher 인터페이스는 subscribe 라는 추상 메서드를 가집니다. Publisher.subscribe(Subscriber)의 형식으로 data 제공자와 구독자가 연결된다.
 
-Tip {: .label .label-yellow } <BR>
+Tip 
+{: .label .label-yellow } <BR>
 Flux와 Mono를 직접 생성하기보다는 다른 라이브러리가 제공하는 Flux와 Mono를 사용할 때가 많다. 예를 들어 스프링 5 버전에 추가된 WebClient 클래스를 사용할 때에는 WebClient가 생성하는 Mono를 이용해서 데이터를 처리한다.
 
-
-
+Tip 
+{: .label .label-yellow } <BR>
+시퀀스를 직접 생성할 일이 많지는 않다. 보통은 라이브러리(ex> grpc, kafka) 가 제공하는 기능을 사용하기 때문이다. 
 
 ### just VS fromSupplier VS defer
 Flux와 Mono는 팩토리 메소드를 제공하기 때문에 햇갈려서 정리한다.
@@ -210,6 +212,9 @@ Subscriber의 데이터 요청이 완료되면 데이터가 스트림을 통해 
 
 전반적인 코드는 위의 CustomSubscriber 클래스를 확인한다.
 
+### 푸시 모델 vs 풀 모델
+Subscription#request()는 Subscriber가 데이터를 처리할 수 있을 때 Publisher에게 데이터를 요청하는 풀(pull) 모델이다. 하지만 request(Long.MAX_VALUE)로 요청하면 Publisher는 개수 제한 없이 Subscriber에 데이터를 전송한다. 이는 완전한 푸시(push) 모델이다. 또 request(100000)을 사용하면 십 만 개의 데이터를 요청하고, Publisher는 발생한 데이터가 십 만 개가 될 때까지 신호를 보낸다. 데이터 요청은 풀 모델로 이루어졌지만 10만 개의 데이터를 전송하는 동안은 실질적으로 푸시 모델과 같다.
+
 
 # Cold Sequence / Hot Sequence
 Cold와 Hot의 차이는 간단하게 Cold는 새로 시작한다, Hot은 새로 시작하지 않는다로 이해할 수 있다.
@@ -219,7 +224,9 @@ Cold와 Hot의 차이는 간단하게 Cold는 새로 시작한다, Hot은 새로
 Cold Sequnece 흐름으로 동작하는 Publisher를 Cold Publisher라고 하고,
 Publisher가 데이터를 emit하는 과정이 한 번만 일어나도 Subscriber가 각각의 구독시점 이후에 emit된 데이터만 전달받는 데이터의 흐름을 Hot Sequence라고 한다.
 
+
 # Processor interface의 구현체
+
 
 
 # 전체적인 흐름
@@ -227,6 +234,7 @@ Publisher가 데이터를 emit하는 과정이 한 번만 일어나도 Subscribe
 
 1. Subscriber 가 subscribe 메소드를 통해 Publisher 에게 구독을 요청
 2. Publisher 는 onSubscribe 메소드로 Subscriber 에게 Subscription 를 전달
+   1. Subscripotion은 구독 라이프 사이클을 관리한다.
 3. Subscriber 는 Subscription.request 을 통해, 자신에게 데이터를 흘려줄 것을 요구
 4. Publisher 는 Subscription 를 통해 Subscriber.onNext로 데이터를 전달한다.
    1. Subscriber 는 내부에 Subscription를 set하였기 때문 (2번)
