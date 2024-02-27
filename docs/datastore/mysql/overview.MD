@@ -414,8 +414,3 @@ SELECT * FROM INFORMATION_SCHEMA.COLUMNS A WHERE TABLE_SCHEMA = 'LESSONMON' WHER
 SELECT table_name, table_rows FROM information_schema. tables WHERE table_schema = 'testdb' ORDER BY table_name;
 ```
 
-
----
-# Backup
-
-![](./BACKUP/README.md)

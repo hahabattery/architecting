@@ -25,6 +25,9 @@ JPA는 기술 명세이다. JPA에 대해서 정리한다.
  * javax.persistence 로 시작하는 패키지는 JPA의 스펙에 해당하는 인터페이스
 
 
+# Hibernate change orders of query execution.
+https://stackoverflow.com/questions/18853146/insert-after-delete-same-transaction-in-spring-data-jpa
+
 
 # 리소스
  * [Spring-Jpa Best Practices](https://github.com/cheese10yun/spring-jpa-best-practices)

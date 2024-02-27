@@ -89,7 +89,7 @@ Oracle에서 기본으로 사용되고 있는 격리수준이다.
 
 ![](../../images/mysql/repeatable-read-figure-1.png)
 
-스냅샷을 생성하는 동안에는 shared lock을 걸기 때문에 이 시간이 올래걸리면 "Lock wait timeout exceed"가 발생하게 된다.
+스냅샷을 생성하는 동안에는 shared lock을 걸기 때문에 이 시간이 오래걸리면 "Lock wait timeout exceed"가 발생하게 된다.
 
 회피방법으로는 DB설정이나 프로그램 소스에서 isolation level을 READ COMMITED로 낮추는 것.
 
@@ -102,6 +102,7 @@ Commit하지 않는다면 undo 영역에 백업된 데이터를 보여준다. �
 참고로 1번 트랜잭션이 update문을 수행하고 아직 commit하기 전이라 할때, 2번 트랜잭션이 접근되어 update문을 수행할 경우 쓰기잠금을 할 수 없는데, 이유는 undo에 있는 영역에서 조회해온 데이터이기 때문이다.
 
 * REPEATABLE_READ mode에서 트랜잭션 안에서 Update문을 실행할 시에는 row lock이 걸리게 된다. 즉, TxA가 특정 row에 대해 업데이트를 수행한 상태에서 같은 row에 대하여 TxB가 업데이트를 시도했을 때, TxB는 TxA가 commit되기 전까지 lock을 대기하는 상태가 된다.
+* 같은 맥락에서 TxA가 특정 row에 대해 업데이트를 수행한 상태에서 같은 row에 대해서 TxB가 select를 시도했을 때는 select는 읽기 잠금(shared lock)을 얻지 못하기 때문에 대기하게 된다.
 ​
 
 ### SERIALIZABLE
