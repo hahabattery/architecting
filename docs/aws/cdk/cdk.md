@@ -17,16 +17,16 @@ permalink: /docs/aws/cdk
 1. TOC 
 {:toc}
 
-AWS SAM과 다른점은 CDK의 경우 AWS의 모든 서비스들에 대해서 사용 가능하다.
-SAM은...
 
----
+AWS SAM과 다른점은 CDK의 경우 AWS의 모든 서비스들에 대해서 사용 가능하다.
+SAM의 경우 AWS의 Serverless 서비스들에 대해서만 사용 가능하다.
+
+
 # 리소스들
 * https://cdkworkshop.com/ <= 이게 가장 기본적인 워크숍인 듯!
 * https://github.com/aws-samples
 * https://github.com/aws-samples/aws-cdk-examples
 * https://github.com/aws-samples/serverless-patterns
-
 
 
 * Serverless Land, AWS Solutions Constructs
@@ -44,12 +44,13 @@ SAM은...
 + https://catalog.us-east-1.prod.workshops.aws/workshops/cbcd960c-a07b-40c2-a01d-1d2e7a52b945/ko-KR/
 
 
----
+
 # CDK관련 명령
 
 ### CDK 설치
 
  * install and version check
+
 ```
 npm install -g aws-cdk
 
@@ -60,38 +61,45 @@ $ cdk --version
 ### 기본명령
 
  * 초기화 명령
+
 ```
 cdk init {어플리케이션명} --language {typescript | python | javascript}
 ```
 
  * 스택 조회?
  * cdk.json 파일과 같은 디렉토리에서 실행
+
 ```
 cdk ls
 ```
 
  * synthesize(합성하다) one of the stacks
+
 ```
 cdk synth
 ```
 
  * install the bootstrap stack into an environment (account/region)
  * 템플릿 저장을 위한 s3버킷같은 리소스를 만들어주는 작업
+
 ```
 cdk bootstrap
 ```
 
  * 배포
+
 ```
 cdk deploy {어플리케이션명}
 ```
 
  * 변경사항 확인
+
 ```
 cdk diff
 ```
 
  * 어플리케이션 삭제
+
 ```
 cdk destroy
 ```
@@ -99,6 +107,7 @@ cdk destroy
 
 ### 자동 빌드
  * package.json 파일에 아래 내용을 추가하고 npm run watch 실행
+
  ```
  "scripts": {
     ...
@@ -110,11 +119,12 @@ cdk destroy
 
 ### source repository 관련
 * github oauth 토큰을 secret manager에 추가하는 명령
+
 ```
 aws secretsmanager create-secret --name /github.com/binxio --secret-string '{"github-token":"69176fbxxxxxxxxxxxxxxxxxxx22fdac2b78"}'
 ```
 
----
+
 # Constructs
  * cdk docs명령으로 매뉴얼 접근 가능
  * 문서를 보면서, cloudformation 가이드를 보는 것이 도움이 된다.
@@ -134,6 +144,7 @@ aws secretsmanager create-secret --name /github.com/binxio --secret-string '{"gi
 
 ### cross-env
  * cross-env (cross-env ( yarn add -D cross-env or npm i -D cross-env ).)
+
  ```
  npx cross-env GITHUB_TOKEN=... cdk deploy PipelineStack
  ```
@@ -141,23 +152,26 @@ aws secretsmanager create-secret --name /github.com/binxio --secret-string '{"gi
 ### cdk package 관리
 
  * local -S (save)
+
  ```
  npm uninstall -S <package-name>
  ```
 
  * package.json의 devDependencies 에 있는 패키지인 경우
+
  ```
  npm uninstall -D <package-name>
  ```
 
 ##### global
  * global installed package
+
  ```
  npm uninstall -g <package name>
  ```
 
 
----
+
 # VS Code
 
 ### unresolved import warning - 1
@@ -172,7 +186,7 @@ aws secretsmanager create-secret --name /github.com/binxio --secret-string '{"gi
  * Python Select Interpreter를 입력하고 맞는 python version을 선택
  * 이렇게 지정한 Python 경로는 vscode 의 개별 과제별 환경 파일인 .vscode 경로 하위의 settings.json 에 기록됨.
 
----
+
 # CDK Tip
 
 ### 리소스를 stateful 한 것과 stateless 한 것을 분리해라.
@@ -192,6 +206,7 @@ aws secretsmanager create-secret --name /github.com/binxio --secret-string '{"gi
 ### IAM 편의 메소드를 이용하자
 * 보통 grant로 시작하는 메소드 이름을 사용할 수 있다.
 * dynamoDB 테이블에 read-only 접근을 하고 싶은 경우는 아래 처럼 작성 가능하다.
+
 ```
 myDynamoTable.grantReadData(myLambdaFunction);
 ```
@@ -211,6 +226,7 @@ myDynamoTable.grantReadData(myLambdaFunction);
 
  * virtual environment
    * allow you have a self-contained, isolated environment to run Python and install arbitrary packages without polluting your system Python.
+
 ```
 // MacOS or Linux
 source .env/bin/activate
@@ -224,17 +240,19 @@ pip install -r requirements.txt
 ```
 
 ##### Java
+
 ```
 // maven
 mvn package
 ```
 
----
+
 # Trouble Shooting
 
 ### This CDK CLI is not compatible with the CDK library used by your application.
 
  * CDK CLI를 최신으로 업데이트
+
 ```
 npm install -g aws-cdk@latest
 ```
@@ -252,12 +270,14 @@ npm install -g aws-cdk@latest
 ### Cannot find module 'typescript'
 
  * https://stackoverflow.com/questions/44611526/how-to-fix-cannot-find-module-typescript-in-angular-4
+
  ```
  npm install -g typescript
  npm link typescript
  ```
 
 ### failed bootstrapping: Error: Please pass '--cloudformation-execution-policies'
+
 ```
 npx cdk bootstrap --profile closeyes2 --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess
 aws://ACCOUNT1/us-east-2

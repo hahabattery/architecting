@@ -16,3 +16,6 @@ vendor/
 
 # mac file
 .DS_Store
+
+# VS Code files
+.vscode/
