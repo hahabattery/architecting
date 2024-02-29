@@ -16,6 +16,7 @@ nav_order: 1
 1. TOC 
 {:toc}
 
+
 Infra와 어플리케이션을 통합해서 관리할 수 있다.
 
 CDK와 다른점은 SAM의 경우 AWS의 Serverless 서비스들에 대해서만 사용 가능하다.

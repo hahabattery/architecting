@@ -6,7 +6,7 @@ nav_order: 1
 parent: Datastore
 ---
 
-![](../images/datastore/목적에맞는데이터베이스사용과현대화.png)
+![](/images/datastore/목적에맞는데이터베이스사용과현대화.png)
 
 
 ---

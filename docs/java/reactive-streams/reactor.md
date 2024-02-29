@@ -230,7 +230,7 @@ Publisher가 데이터를 emit하는 과정이 한 번만 일어나도 Subscribe
 
 
 # 전체적인 흐름
-![](../../images/java/all-reactive-streams-components.png)
+![](/images/java/all-reactive-streams-components.png)
 
 1. Subscriber 가 subscribe 메소드를 통해 Publisher 에게 구독을 요청
 2. Publisher 는 onSubscribe 메소드로 Subscriber 에게 Subscription 를 전달
@@ -242,7 +242,7 @@ Publisher가 데이터를 emit하는 과정이 한 번만 일어나도 Subscribe
 
 
 # Processor (Publisher와 Subscriber를 혼합)
-![](../../images/java/reactive-sptream-components-processor.png)
+![](/images/java/reactive-sptream-components-processor.png)
 
 Publisher 와 Subscriber 를 혼합한 Processor 라는 것도 있다.
 ```java

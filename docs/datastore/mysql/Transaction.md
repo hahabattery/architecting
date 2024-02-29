@@ -87,7 +87,7 @@ Oracle에서 기본으로 사용되고 있는 격리수준이다.
 ### REPEATABLE-READ
 트랜잭션에서 SELECT시에 해당 데이터에 Shared Lock을 걸고 데이터의 Snapshot을 생성한다. 이후 동일 트랜잭션 내의 SELECT는 Snapshot에서 읽게 됨.
 
-![](../../images/mysql/repeatable-read-figure-1.png)
+![](/images/mysql/repeatable-read-figure-1.png)
 
 스냅샷을 생성하는 동안에는 shared lock을 걸기 때문에 이 시간이 오래걸리면 "Lock wait timeout exceed"가 발생하게 된다.
 

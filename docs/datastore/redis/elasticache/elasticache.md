@@ -11,17 +11,17 @@ parent: Redis
 AWS ElastiCache for Redis provides the ability to take snapshots for data persistence (similar to RDB snapshots). However, support for the Append Only File (AOF) persistence mode was limited or not available.
 
 
-![](../../../images/datastore/redis/elastic-cache-01.png)
-![](../../../images/datastore/redis/elastic-cache-02.png)
-![](../../../images/datastore/redis/elastic-cache-03.png)
-![](../../../images/datastore/redis/elastic-cache-04.png)
-![](../../../images/datastore/redis/elastic-cache-05.png)
-![](../../../images/datastore/redis/elastic-cache-06.png)
-![](../../../images/datastore/redis/elastic-cache-07.png)
-![](../../../images/datastore/redis/elastic-cache-08.png)
-![](../../../images/datastore/redis/elastic-cache-09.png)
-![](../../../images/datastore/redis/elastic-cache-10.png)
-![](../../../images/datastore/redis/elastic-cache-11.png)
+![](/images/datastore/redis/elastic-cache-01.png)
+![](/images/datastore/redis/elastic-cache-02.png)
+![](/images/datastore/redis/elastic-cache-03.png)
+![](/images/datastore/redis/elastic-cache-04.png)
+![](/images/datastore/redis/elastic-cache-05.png)
+![](/images/datastore/redis/elastic-cache-06.png)
+![](/images/datastore/redis/elastic-cache-07.png)
+![](/images/datastore/redis/elastic-cache-08.png)
+![](/images/datastore/redis/elastic-cache-09.png)
+![](/images/datastore/redis/elastic-cache-10.png)
+![](/images/datastore/redis/elastic-cache-11.png)
 
 
 # Tips
