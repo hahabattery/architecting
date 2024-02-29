@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Springs
+title: AWS
 nav_order: 3
 has_children: true
-permalink: /docs/springs
+permalink: /docs/aws
 ---
