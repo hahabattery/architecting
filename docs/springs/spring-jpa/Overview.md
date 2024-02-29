@@ -7,6 +7,11 @@ nav_order: 1
 ---
 
 
+# 리소스
+ * [Spring-Jpa Best Practices](https://github.com/cheese10yun/spring-jpa-best-practices)
+
+
+# JPA의 특징
  * JPA는 동시성에 대한 것은 모두 데이터베이스의 트랜잭션 처리에 위임함.
 
 
@@ -28,9 +33,7 @@ JPA는 기술 명세이다. JPA에 대해서 정리한다.
 # Hibernate change orders of query execution.
 https://stackoverflow.com/questions/18853146/insert-after-delete-same-transaction-in-spring-data-jpa
 
-
-# 리소스
- * [Spring-Jpa Best Practices](https://github.com/cheese10yun/spring-jpa-best-practices)
+When flushing, Hibernate executes all inserts before delete statements.
 
 
 # 네이밍 룰
@@ -66,7 +69,6 @@ https://www.baeldung.com/hibernate-naming-strategy
 
 
 
----
 # 어노테이션 관련 설명
 
  * @Repository
