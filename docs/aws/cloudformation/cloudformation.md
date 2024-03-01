@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Cloud Development Kit
+title: CloudFormation
 nav_order: 3
 parent: AWS
 has_children: true
-permalink: /docs/aws/cdk
+permalink: /docs/aws/cloudformation
 ---
 
-# Cloud Development Kit
+# Cloud Formation
 {: .no_toc}
