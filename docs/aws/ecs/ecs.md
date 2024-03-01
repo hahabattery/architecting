@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Cloud Development Kit
+title: ECS
 nav_order: 3
 parent: AWS
 has_children: true
-permalink: /docs/aws/cdk
+permalink: /docs/aws/ecs
 ---
 
-# Cloud Development Kit
+# Elastic Container Service
 {: .no_toc}

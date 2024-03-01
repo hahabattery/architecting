@@ -6,3 +6,6 @@ parent: AWS
 has_children: true
 permalink: /docs/aws/sam
 ---
+
+# Serverless Application Model
+{: .no_toc}

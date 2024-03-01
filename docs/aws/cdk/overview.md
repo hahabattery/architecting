@@ -7,7 +7,7 @@ nav_order: 1
 ---
 
 
-# Cloud Development Kit
+# Cloud Development Kit Overview
 {: .no_toc}
 
 # Table of contents
@@ -21,8 +21,13 @@ AWS SAM과 다른점은 CDK의 경우 AWS의 모든 서비스들에 대해서 �
 SAM은 AWS의 Serverless 서비스들에 대해서만 사용 가능하다.
 
 
-# 리소스들
+# Resources
+
+* [AWS CDK Reference Documentation](https://docs.aws.amazon.com/cdk/api/v2/)
+* [AWS Solutions Constructs](https://docs.aws.amazon.com/solutions/latest/constructs/welcome.html)
+  
 * https://cdkworkshop.com/ <= 이게 가장 기본적인 워크숍인 듯!
+  
 * https://github.com/aws-samples
 * https://github.com/aws-samples/aws-cdk-examples
 * https://github.com/aws-samples/serverless-patterns
