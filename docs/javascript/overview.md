@@ -6,10 +6,9 @@ nav_order: 1
 ---
 
 
-# 리소스
-
-* Catsb's Dlog JavaScript (JavaScript의 내부 동작에 대한 설명글)
-https://catsbi.oopy.io/0f510a03-8f5e-4683-82ad-96a123b228f2
+# Resources
+* [Microsoft JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+* [Catsb's Dlog JavaScript(JavaScript의 내부 동작에 대한 설명글)](https://catsbi.oopy.io/0f510a03-8f5e-4683-82ad-96a123b228f2) 
 
 
 # inflearn의 자바스크립트 강좌
@@ -45,6 +44,7 @@ inflearn 의 자바스크립트 강좌를 정리한 내용 (https://github.com/b
 ### strict mode
 
  * strict mode for file
+
 ```javascript
 // only whitespace and comments are allowed
 // before the use-strict pragma
@@ -53,6 +53,7 @@ inflearn 의 자바스크립트 강좌를 정리한 내용 (https://github.com/b
 ```
 
  * strict mode for function
+
 ```javascript
 function someOperations() {
     // whitespace and comments are fine here
@@ -124,7 +125,7 @@ console.log('다음 작업');
 |:--:|
 |*closure - 1*|
 
-|![closure]/images/javascript/closure-2.png)|
+|![closure](/images/javascript/closure-2.png)|
 |:--:|
 |*closure - 2*|
 
@@ -148,6 +149,7 @@ console.log('다음 작업');
 ### JQuery
 
 ##### 리퀘스트바디 이용
+
 ```
 $(".login-form button[type=submit]").click(login);
 
@@ -208,6 +210,7 @@ function login(e) {
 ### AJAX 함수를 Promise로 변환
 
  * 아래와 같은 ajax함수가 있을 때
+
 ```
 function doTheThing() {
   $.ajax({
@@ -227,12 +230,14 @@ function doTheThing() {
 ```
 
  * 만약에 아래처럼 동기적으로 Ajax 호출을 하려고 한다면...
+
 ```
 doTheThing()
 doSomethingElse()
 ```
 
  * 최소한의 노력으로 Promise로 변경할 수 있다.
+
 ```
 function doTheThing() {
   return new Promise((resolve, reject) => {
@@ -254,6 +259,7 @@ function doTheThing() {
 ```
 
  * promise chaining으로 동기적으로 호출할 수 있게 된다.
+ 
  ```
  doTheThing()
   .then((data) => {
@@ -272,6 +278,7 @@ function doTheThing() {
 ![](/images/javascript/html_templating-01.png)
 
  * 간단한 html templating
+
 ```javascript
 var data = {  title : "hello",
               content : "lorem dkfief",
