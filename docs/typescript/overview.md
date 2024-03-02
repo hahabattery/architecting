@@ -9,5 +9,5 @@ nav_order: 1
 
 # Resources
 
-[TypeScript](https://www.typescriptlang.org/)
+* [TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/)
 

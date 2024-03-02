@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Springs
+title: JavaScript
 nav_order: 30
 has_children: true
-permalink: /docs/springs
+permalink: /docs/javascript
 ---
+
+
