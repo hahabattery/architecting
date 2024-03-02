@@ -17,6 +17,8 @@ nav_order: 1
 {:toc}
 
 
+> Dev(개발), Ops(운영), ML등의 담당자들이 하나의 울타리 내에서 협업하면서 사일로를 최소화하는 것이 중요한데, 이때 CDK 프로젝트를 구성하면, CDK가 좋은 울타리 역활을 해줄 것이다.
+
 AWS SAM과 다른점은 CDK의 경우 AWS의 모든 서비스들에 대해서 사용 가능하다.
 SAM은 AWS의 Serverless 서비스들에 대해서만 사용 가능하다.
 
@@ -32,6 +34,18 @@ SAM은 AWS의 Serverless 서비스들에 대해서만 사용 가능하다.
 * [Santa’s AWS Workshop!](https://github.com/collin-smith/santasworkshop)
 
 
+### CDK Solutions Constructs
+긴밀히 사용되는 AWS resource들을 하나의 Constructs로 제공한다.
+
+* [AWS Solutions Constructs – A Library of Architecture Patterns for the AWS CDK](https://aws.amazon.com/ko/blogs/aws/aws-solutions-constructs-a-library-of-architecture-patterns-for-the-aws-cdk/)
+* [AWS Solutions Constructs](https://docs.aws.amazon.com/solutions/latest/constructs/welcome.html)
+
+### CDK + MLOps implementaion example
+https://github.com/aws-samples/amazon-sagemaker-model-serving-using-aws-cdk
+
+
+### CDK's ecosystem
+terfform이나 kubernetes의 manifest파일 정의또한 CDK로 작성이 가능하다.
 
 * Serverless Land, AWS Solutions Constructs
   + 간단한 예제
@@ -46,6 +60,22 @@ SAM은 AWS의 Serverless 서비스들에 대해서만 사용 가능하다.
 
 **DevOps Hands On Lab 2022-08-17진행**
 + https://catalog.us-east-1.prod.workshops.aws/workshops/cbcd960c-a07b-40c2-a01d-1d2e7a52b945/ko-KR/
+
+
+# CDK Construct Libraries
+
+* L1 Cloudformation Resources 
+  AWS CloudFormation에 정의된 그대로의 리소스를 생성한다.
+* L2 AWS Constructs
+  AWS 서비스 하나하나를 매핑해두었다고 보면 된다. 상위레벨로 단순한 리소스 생성이 아닌, 특정 기능을 제공한다(intentioinbased API). L2는 코드 틀(boilerplate)나 default 설정이나 CDK작성자가 필요로 할만한 관련 로직(glue logic)이 준비되어있다.
+* L3 Purpose-built Constructs
+  하나의 완결된 작업을 할 수 있도록 설계되어있다. 다양한 리소스를 이용하도록 작성된 경우가 많은데, 일종의 Optionated pattern으로 볼 수 있다. (Optionated pattern; 패턴을 만든 사람이 자기가 필요하다고 생각한 여러 리소스나 로직을 사용자의 의견을 고려하지 않고 작성하였다는 의미...)
+
+
+
+### 추상화는 성급하게 하지 말자.
+* L3와 같은 패턴을 새로 작성하려는 경우가 생기겠지만, L2의 유연성을 줄이거나, 새로 작성된 L3의 shared construct의 default property 를 변경하는 경우에 혹시 다른 어플리케이션에 영향을 줄 수 있으므로 주의해야 한다.
+
 
 
 
@@ -232,13 +262,7 @@ myDynamoTable.grantReadData(myLambdaFunction);
 ```
 * IAM Role을 생성하려고 하는 등의 작업시에는 편의 메소드가 있는지, 한번 더 하자.
 
-### 추상화는 성급하게 하지 말자.
 
-* L1은 AWS CloudFormation에 정의된 그대로의 리소스를 생성한다.
-* L2는 상위레벨로 단순한 리소스 생성이 아닌, 특정 기능을 제공한다(intentioinbased API). L2는 코드 틀(boilerplate)나 default 설정이나 CDK작성자가 필요로 할만한 관련 로직(glue logic)이 준비되어있다.
-* L3 하나의 완결된 작업을 할 수 있도록 설계되어있다. 다양한 리소스를 이용하도록 작성된 경우가 많은데, 일종의 Optionated pattern으로 볼 수 있다. (Optionated pattern; 패턴을 만든 사람이 자기가 필요하다고 생각한 여러 리소스나 로직을 사용자의 의견을 고려하지 않고 작성하였다는 의미...)
-
-* L3와 같은 패턴을 새로 작성하려는 경우가 생기겠지만, L2의 유연성을 줄이거나, 새로 작성된 L3의 shared construct의 default property 를 변경하는 경우에 혹시 다른 어플리케이션에 영향을 줄 수 있으므로 주의해야 한다.
 
 ### Programming Language별로 다른 내용
 
