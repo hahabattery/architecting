@@ -25,12 +25,12 @@ SAM은 AWS의 Serverless 서비스들에 대해서만 사용 가능하다.
 
 * [AWS CDK Reference Documentation](https://docs.aws.amazon.com/cdk/api/v2/)
 * [AWS Solutions Constructs](https://docs.aws.amazon.com/solutions/latest/constructs/welcome.html)
-  
-* https://cdkworkshop.com/ <= 이게 가장 기본적인 워크숍인 듯!
-  
+* [CDK Workshop](https://cdkworkshop.com/)
 * https://github.com/aws-samples
 * https://github.com/aws-samples/aws-cdk-examples
 * https://github.com/aws-samples/serverless-patterns
+* [Santa’s AWS Workshop!](https://github.com/collin-smith/santasworkshop)
+
 
 
 * Serverless Land, AWS Solutions Constructs
@@ -107,6 +107,22 @@ cdk diff
 ```
 cdk destroy
 ```
+
+### hotswap
+
+* Hotswap deployments
+
+```
+cdk deploy --hotswap
+```
+
+* 자동 배포
+
+```
+cdk watch
+```
+cdk watch will use the --hotswap flag, which inspects the changes and determines if those changes can be hotswapped.
+
 
 
 ### 자동 빌드
