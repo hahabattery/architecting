@@ -26,7 +26,6 @@ SAM은 AWS의 Serverless 서비스들에 대해서만 사용 가능하다.
 # Resources
 
 * [AWS CDK Reference Documentation](https://docs.aws.amazon.com/cdk/api/v2/)
-* [AWS Solutions Constructs](https://docs.aws.amazon.com/solutions/latest/constructs/welcome.html)
 * [CDK Workshop](https://cdkworkshop.com/)
 * https://github.com/aws-samples
 * https://github.com/aws-samples/aws-cdk-examples
@@ -35,13 +34,19 @@ SAM은 AWS의 Serverless 서비스들에 대해서만 사용 가능하다.
 
 
 ### CDK Solutions Constructs
-긴밀히 사용되는 AWS resource들을 하나의 Constructs로 제공한다.
+* [AWS Solutions Constructs](https://docs.aws.amazon.com/solutions/latest/constructs/welcome.html)
+
+긴밀히 사용되는 AWS resource들을 합성해서 하나의 Constructs로 제공한다.
 
 * [AWS Solutions Constructs – A Library of Architecture Patterns for the AWS CDK](https://aws.amazon.com/ko/blogs/aws/aws-solutions-constructs-a-library-of-architecture-patterns-for-the-aws-cdk/)
 * [AWS Solutions Constructs](https://docs.aws.amazon.com/solutions/latest/constructs/welcome.html)
 
 ### CDK + MLOps implementaion example
 https://github.com/aws-samples/amazon-sagemaker-model-serving-using-aws-cdk
+
+### ECS Infra + CICD + Dashboard
+https://github.com/aws-samples/aws-ecs-devops-using-aws-cdk 
+
 
 
 ### CDK's ecosystem
@@ -86,10 +91,29 @@ terfform이나 kubernetes의 manifest파일 정의또한 CDK로 작성이 가능
  * install and version check
 
 ```
-npm install -g aws-cdk
+npm install -g aws-cdk@latest
 
 $ cdk --version
 1.21.1 (build 842cc5f)
+```
+
+or you can install from compressed file from github.
+
+```
+npm install -g ./aws-cdk-2.131.0.tar.gz
+```
+
+remove aws-cdk package
+
+```
+npm uninstall -g aws-cdk
+```
+
+but sometimes it's not going to work, because you installed cdk using homebrew and you forgot it.
+such a case you can remove cdk which is installed using homebrew. and reinstall using npm.  
+
+```
+brew uninstall --force cdk
 ```
 
 ### 기본명령
