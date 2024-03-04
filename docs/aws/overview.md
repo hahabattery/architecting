@@ -18,6 +18,9 @@ parent: AWS
 
 
 
+# Resources
+ * [AWS Startup](https://www.awsstartup.io/)
+
 
 * https://kr-resources.awscloud.com/aws-industry-week-2023?trkCampaign=industry-week&trk=cedd1ded-dc2a-44c3-bcf5-1bfc6767ed12&sc_channel=em&mkt_tok=MTEyLVRaTS03NjYAAAGPAx0UWwHvqi4NFBbPCPGau593kevR1KSiOopH7QN5q1zDgEzrOKYi-TSZutML27royE_dBx9BeXYLsHoV0sQin-khCun-ySQdKgA6VPj6CvFVYobTTrUauA
   + => 2023년도 industry week

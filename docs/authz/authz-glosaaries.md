@@ -63,7 +63,7 @@ claim이라는 용어가 자주 나오는데, JSON형태의 "주고받는 정보
    sub를 단순히 제목으로 사용하기보다는, user ID와 같이 전체를 포괄하는 내용을 담아주는 용도로 많이 사용하는 듯하다.
 
  * aud
-   Audience, 받는 주체
+   Audience, 받는 주체. 이거는 audience라는 항목으로 이 token을 어디쪽으로 보내야하는지에 대한 정보를 의미한다.예를 들어서 refresh token은 aud가 인증서버url로 세팅된다. 
    
  * exp
    Expiration, 만료시간. NumericDate value를 포함하는 숫자여야 한다.
