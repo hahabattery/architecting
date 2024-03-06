@@ -7,7 +7,7 @@ parent: MySQL
 ---
 
 
-# MVCC (multiversion concurrency control)
+# InnoDB MVCC (multi-version concurrency control)
 
 * https://dev.mysql.com/doc/refman/8.0/en/innodb-multi-versioning.html
 
@@ -87,6 +87,10 @@ Oracle에서 기본으로 사용되고 있는 격리수준이다.
 ### REPEATABLE-READ
 트랜잭션에서 SELECT시에 해당 데이터에 Shared Lock을 걸고 데이터의 Snapshot을 생성한다. 이후 동일 트랜잭션 내의 SELECT는 Snapshot에서 읽게 됨.
 
+> A consistent read means that InnoDB uses multi-versioning to present to a query a snapshot of the database at a point in time. The query sees the changes made by transactions that committed before that point of time, and no changes made by later or uncommitted transactions.
+> ...
+> If the transaction isolation level is REPEATABLE READ (the default level), all consistent reads within the same transaction read the snapshot established by the first such read in that transaction. You can get a fresher snapshot for your queries by committing the current transaction and after that issuing new queries.
+
 ![](/images/mysql/repeatable-read-figure-1.png)
 
 스냅샷을 생성하는 동안에는 shared lock을 걸기 때문에 이 시간이 오래걸리면 "Lock wait timeout exceed"가 발생하게 된다.
@@ -101,8 +105,12 @@ Commit하지 않는다면 undo 영역에 백업된 데이터를 보여준다. �
 
 참고로 1번 트랜잭션이 update문을 수행하고 아직 commit하기 전이라 할때, 2번 트랜잭션이 접근되어 update문을 수행할 경우 쓰기잠금을 할 수 없는데, 이유는 undo에 있는 영역에서 조회해온 데이터이기 때문이다.
 
-* REPEATABLE_READ mode에서 트랜잭션 안에서 Update문을 실행할 시에는 row lock이 걸리게 된다. 즉, TxA가 특정 row에 대해 업데이트를 수행한 상태에서 같은 row에 대하여 TxB가 업데이트를 시도했을 때, TxB는 TxA가 commit되기 전까지 lock을 대기하는 상태가 된다.
+* REPEATABLE_READ mode에서 트랜잭션 안에서 Update문을 실행할 시에는 row lock이 걸리게 된다. 즉, TxA가 특정 row에 대해 업데이트를 수행한 상태에서 같은 row에 대하여 TxB가 업데이트를 시도했을 때, TxB는 TxA가 commit되기 전까지 lock을 대기하는 상태가 된다. 앞서 SELECT에서는 snapshot을 가지고 같은 transaction 안에서는 해당 snapshot을 사용한다고 했는데, 업데이트 하려는 row가 다른 트랜잭션에 의해 업데이트된 상태임에도 이전 snapshot을 사용하게 된다면, 정합성이 깨지게 된다. 이에 따라 UPDATE가 된 경우 해당 row에 대한 consistent read는 refresh되고, latest state에 해당 UPDATE를 반영한 결과가 보여지게 된다. 이는 MySQL 공식문서에 아래와 같이 명시되어있다.
+
+> A consistent read means that InnoDB uses multi-versioning to present to a query a snapshot of the database at a point in time. The query sees the changes made by transactions that committed before that point of time, and no changes made by later or uncommitted transactions. The exception to this rule is that the query sees the changes made by earlier statements within the same transaction. This exception causes the following anomaly: If you update some rows in a table, a SELECT sees the latest version of the updated rows, but it might also see older versions of any rows. If other sessions simultaneously update the same table, the anomaly means that you might see the table in a state that never existed in the database.
+
 * 같은 맥락에서 TxA가 특정 row에 대해 업데이트를 수행한 상태에서 같은 row에 대해서 TxB가 select를 시도했을 때는 select는 읽기 잠금(shared lock)을 얻지 못하기 때문에 대기하게 된다.
+
 ​
 
 ### SERIALIZABLE
