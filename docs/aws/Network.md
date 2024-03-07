@@ -26,6 +26,11 @@ ENI에는 보안그룹을 설정할 수 있다.
 
 ENI는 별도 요금이 부과되지는 않는다.
 
+* 사용했던 예
+  + EC2에 ENI를 추가해서 특정서브넷에 인터페이스를 세팅하고, 해당 서브넷에 라우팅 테이블을 추가한다.
+  + 이 라우팅 테이블에는 VPG(Virtual Private Gateway)에서 상대편 네트워크 정보(Topology)가 전파된다. 
+  + 관련 링크) [Direct Connect로 On-Prem, AWS VPC 연결하기 (private VIF)](https://jaykos96.tistory.com/70)
+
 ### VPCE
 * VPC내부의 리소스들은 Internet Gatway, NAT Gatway, VPCE 를 통하지 않으면 S3와 같은 global이나 regional 리소스에 접근할 수 없다.
 * internet gateway나 Nat gateway는 S3같은 리소스 접속시에 외부 인터넷에 공개적으로 연결되어서 트래픽이 노출되게 된다.
@@ -50,3 +55,5 @@ Private DNS names enabled를 활성화 하지 않으면, 공인 IP주소를 불�
 gateway endpoint는 interface endpoint와는 달리 라우팅테이블에 라우팅만 추가합니다. 자동으로 추가되며 변경할 수 없다.
 
 S3와 DynamoDB 두개 서비스만 사용 가능.
+
+
