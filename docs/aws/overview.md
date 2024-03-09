@@ -100,7 +100,14 @@ https://www.udemy.com/course/build-a-serverless-app-with-aws-lambda-hands-on/tg
 
  * https://www.udemy.com/course/aws-serverless-a-complete-guide
 
----
+
+# Amazon Managed Service for Apache Flink
+Amazon Kinesis Data Analytics 의 이름으로 사용되던 서비스가, Apache Flink로 이름이 변경되었다. 이름만 변경되고 동작은 동일하다(호환성 O)
+* https://catalog.us-east-1.prod.workshops.aws/workshops/bffd236b-ce54-48f8-b3fa-c4acd4909053
+
+* https://catalog.us-east-1.prod.workshops.aws/workshops/10435111-3e2e-48bb-acb4-0b5111d7638e/ko-KR
+
+
 # AWS 지원 프로그램
 AWS에는 다양한 지원 프로그램이 존재한다.
 * dynamoDB 의 스키마 설계관련 지원

@@ -304,6 +304,11 @@ public void $methodName$() throws Exception {
  * Ctrl + P
 
 
+# Remote Development
+IntelliJ offers "Remote Developement" feature. 이 기능은 개발자가 원격 시스템의 리소스를 이용해서 낮은 클라이언트 스펙을 이용해서 IntelliJ IDE를 원활하게 이용할 수 있는 방법을 제공해준다. 하지만, 문서에 따르면 8G이상의 메모리, 2개 이상의 VCPU가 필요하다고 한다. Remote Development 기능을 이용하기 위해서 AWS 같은 경우는 최소 168$이상의 비용이 발생하게 된다. 일반적인 개발 환경이라면, 보통 Mac같은 워크스테이션을 구입하게 될 것이다. 
+
+비용을 따져보면, Remote Development 기능을 사용할 일이 거의 없을 것으로 생각되는데,  기능이 꽤나 유용한 유스케이스가 있었는데, 네트워크가 외부로 노출되서는 안되는 환경에서 빠르게 개발환경을 서버에 구축하는 케이스였다. 만약 시간이 촉박하다면, 꽤나 유용한 수단이 될 수도 있겠다. 물론,  intellij "tools > deployment" 메뉴를 이용하면, 원격환경을 이용해서 적은비용으로 원격 개발환경을 구축할 수 있다. 하지만, remote development와 같은 쾌적한 환경은 아니다.
+
 
 # Trouble Shooting
 
