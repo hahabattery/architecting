@@ -6,6 +6,17 @@ parent: Spring Frameworks
 nav_order: 4
 ---
 
+# Annotations
+{: .no_toc}
+
+# Table of contents
+{: .no_toc .text-delta }
+
+1. TOC 
+{:toc}
+
+
+
 어노테이션을 기억하기 위해서 정리하는 공간
 
 
@@ -90,6 +101,7 @@ nav_order: 4
 
 
  * 1. 클래스의 property(field)에 @Autowire
+
 ```java
 @Component("fooFormatter")
 public class FooFormatter {
@@ -108,6 +120,7 @@ Spring injects fooFormatter when FooService is created.
 
 
  * 2. setter 메소드에 @Autowire
+
 ```java
 public class FooService {
     private FooFormatter fooFormatter;
@@ -121,6 +134,7 @@ the setter method is called with the instance of FooFormatter when FooService is
 
 
  * 3. 생성자에 @Autowire
+
 ```java
 public class FooService {
     private FooFormatter fooFormatter;
@@ -136,6 +150,7 @@ an instance of FooFormatter is injected by Spring as an argument to the FooServi
  * Configuration 클래스내의 메소드에 @Autowire
 any method annotated with @Autowired is a config method. It is called on bean instantiation after field injection is done. 
 The arguments of the method are injected into the method on calling.
+
 ```java
 // https://stackoverflow.com/questions/32381843/autowired-on-method-in-spring
 public class MovieRecommender {
@@ -159,6 +174,7 @@ methods annotated with these annotations are called after bean creation and can 
 
 
  * @Autowired and Optional Dependencies
+
 ```
 // Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: 
 // No qualifying bean of type [com.autowire.sample.FooDAO] found for dependency: 
@@ -208,6 +224,7 @@ public class Cat implements Animal{}
 ```
 
 차이
+
 ```
 @Autowired
 private Dog cat 
@@ -243,6 +260,7 @@ private Cat dog
  * **javax.annotation**에 속해 있음.
  * 타입을 통한 검색방식
  * 타입이 같은 POJO가 여럿일 때는 아래처럼 커스텀 어노테이션(custom annotation)을 작성해야한다.
+
 ```
 //커스텀 어노테이션
 @Qualifier
