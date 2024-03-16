@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Overview
+title: Advanced Topics
 parent: JavaScript
 nav_order: 1
 ---
