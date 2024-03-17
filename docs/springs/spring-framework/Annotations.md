@@ -189,6 +189,7 @@ public class FooService {
 
 
 ### @Autowired vs @Inject vs @Resource
+
 |          |  @Autowired   | @Inject | @Resource |
 |----------|:-------------:|:------:|------:|
 |제공자 | Spring | Java | Java |
@@ -197,9 +198,6 @@ public class FooService {
 
 
 > Spring uses the bean's name as a default qualifier value.
-
-
-이름이 우선인거 같은데... 음... 다시 확인해서 위의 표가 잘못됬으면, 수정할 것.
 
 
 @Qualifier 같은 경우는 
@@ -282,6 +280,7 @@ public calss ForExample{
   
 }
 ```
+
 ※ 위 @Qualifier는 @Autowired의 @Qualifier와는 전혀 다르다.
 
 
@@ -292,6 +291,9 @@ public calss ForExample{
    
  * 이름을 통해 검색 방식을 사용하고 싶으면 @Resource를 사용하고,
    타입을 통해 검색 방식을 사용하고 싶으면 @Autowired, @Inject를 사용하자.
+
+ * @Configuration 으로 빈 생성시에는 함수이름이 빈 이름으로 사용되게 된다.
+ * @RequiredArgConstructor를 이용하는 경우는 private final 에 @Qualifier("빈명")를 이용한 경우에 적용되지 않고, 변수명을 맞춰야지 매칭이 되었다.
 
 ![](doc/imgs/AutowirevsInjectvsResource.png)
 

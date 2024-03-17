@@ -168,6 +168,7 @@ public interface Language {
 
 
 2. 상속받은 클래스를 구분해 줄 클래스 생성
+
 ```java
 public class LanguageType {
 
@@ -294,6 +295,7 @@ public class Member extends ApplicationEvent {
 ```
 
 Event를 처리할 Listener를 만든다. (해당 Listener 는 Bean으로 등록 되어 있어야 함.)
+
 ```java
 @Component
 public class SampleListener implements ApplicationListener<Member> {
@@ -304,6 +306,7 @@ public class SampleListener implements ApplicationListener<Member> {
     }
 }
 ```
+
 마지막으로 이벤트를 발생 시켜 주면 된다.
 
 ```java
