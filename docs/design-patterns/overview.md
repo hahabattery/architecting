@@ -18,6 +18,40 @@ bethrobson/Head-First-Design-Patterns 같은 경우는 소스 snippet으로 관�
 * [available design patterns](https://java-design-patterns.com/patterns/)
 * [Design Patterns in guru](https://refactoring.guru/design-patterns)
 
+# diagram
+객체 간의 의존성을 시각화할 수 있다.
+
+* 연관 관계(Association)
+
+```java
+class A {
+    private B b;
+}
+```
+
+* 의존 관계(Dependency)
+
+```java
+class A {
+    private B method(B b) {
+        return new B();
+    }
+}
+```
+
+* 일반화 관계(Generalization)
+
+```java
+class A extends B {
+}
+```
+
+* 실체화 관계(Realization)
+
+```java
+class A implements B {
+}
+```
 
 # facade and spring's slf4j
 SLF4J stands for Simple Logging Facade for Java. It provides a simple abstraction of all the logging frameworks. It enables a user to work with any of the logging frameworks such as Log4j, Logback, JUL (java.util.logging), etc. using single dependency.

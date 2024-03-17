@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Overview
+title: Design Patterns In Spring
 parent: Design Patterns
 nav_order: 10
 ---
