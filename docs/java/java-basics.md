@@ -1,12 +1,66 @@
 ---
 layout: default
 title: Java Basics
+description: java의 기본적인 내용을 정리한다.
 parent: Java
 nav_order: 1
 ---
 
 
-java의 기본적인 내용을 정리한다.
+### 변수의 값 초기화
+* 멤버 변수: 자동 초기화
+  + 인스턴스의 멤버 변수는 인스턴스를 생성할 때 자동으로 초기화된다.
+  + 숫자( `int` )= `0` , `boolean` = `false` , 참조형 = `null` ( `null` 값은 참조할 대상이 없다는 뜻으로 사용
+된다.)
+  + 개발자가 초기값을 직접 지정할 수 있다.
+* 지역 변수: 수동 초기화
+  + 지역 변수는 항상 직접 초기화해야 한다.
+
+
+```java
+package ref;
+public class InitData {
+    int value1; //초기화 하지 않음
+    int value2 = 10; //10으로 초기화
+}
+```
+value1` 은 초기값을 지정하지 않았고, `value2` 는 초기값을 10으로 지정했다.
+
+```java
+public class InitMain {
+    public static void main(String[] args) {
+        InitData data = new InitData();
+        System.out.println("value1 = " + data.value1);
+        System.out.println("value2 = " + data.value2);
+    }
+}
+
+<result>
+value1 = 0
+value2 = 10
+```
+value1` 은 초기값을 지정하지 않았지만 멤버 변수는 자동으로 초기화 된다. 숫자는 `0` 으로 초기화된다.
+`value2` 는 `10` 으로 초기값을 지정해두었기 때문에 객체를 생성할 때 `10` 으로 초기화된다.
+
+
+### 기본형 vs 참조형
+* 기본형은 들어있는 값을 그대로 계산에 사용할 수 있다.
+  + 예) 더하고 빼고, 사용하고 등등, (숫자 같은 것들은 바로 계산할 수 있음)
+* 참조형은 들어있는 참조값을 그대로 사용할 수 없다. 주소지만 가지고는 할 수 있는게 없다. 주소지에 가야 실체가 있다!
+  + 예) 더하고 빼고 사용하고 못함! 참조값만 가지고는 계산 할 수 있는 것이 없음!
+  
+* 기본형을 제외한 나머지는 모두 참조형이다.
+  + 기본형은 소문자로 시작한다. `int` , `long` , `double` , `boolean` 모두 소문자로 시작한다.
+  + 기본형은 자바가 기본으로 제공하는 데이터 타입이다. 이러한 기본형은 개발자가 새로 정의할 수 없다. 개발
+  + 자는 참조형인 클래스만 직접 정의할 수 있다.
+* 클래스는 대문자로 시작한다. `Student`
+  + 클래스는 모두 참조형이다.
+
+
+
+**참고 - String**
+자바에서 `String` 은 특별하다. `String` 은 사실은 클래스다. 따라서 참조형이다. 그런데 기본형처럼 문자 값을 바로
+대입할 수 있다. 문자는 매우 자주 다루기 때문에 자바에서 특별하게 편의 기능을 제공한다.
 
 ### 배열 선언 방법
 자바는 배열을 생성할 때, 그 내부값을 자동으로 초기화한다. 숫자는 0, boolean은 false, String은 null로 초기화된다.
@@ -18,6 +72,7 @@ Student[] students = new Student[]{student1, student2};
 
 Student[] students = {student1, student2}// 더 짧게 작성 가능
 ```
+
 
 ---
 # 객체 VS 인스턴스
@@ -36,9 +91,9 @@ IDE같은 경우는 JDK 버전을 관리하는 방법을 제공해준다.
 export JAVA_HOME=`/usr/libexec/java_home -v 11.0.18`
 
 ---
-# 기본
 
-### 생성자
+# 생성자
+
 생성자가 호출되었을 때, 부모 클래스의 필드가 먼저 생성되고, 자식클래스의 필드가 함께 복사된다.
 
 먼저 super()를 작성하지 않더라도, 호출되어서 부모클래스의 생성자를 호출한다.
@@ -47,6 +102,62 @@ export JAVA_HOME=`/usr/libexec/java_home -v 11.0.18`
 
 생성자의 진짜 장점은 객체를 생성할 때 직접 정의한 생성자가 있다면 **직접 정의한 생성자를 반드시 호출**해야 한다는 점
 
+### **    기본 생성자**
+매개변수가 없는 생성자를 기본 생성자라 한다.
+
+클래스에 생성자가 하나도 없으면 자바 컴파일러는 매개변수가 없고, 작동하는 코드가 없는 기본 생성자를 자동으로 만들어준다.
+
+**생성자가 하나라도 있으면 자바는 기본 생성자를 만들지 않는다.**
+
+### **this()**
+
+아래 두 생성자를 비교해 보면 코드가 중복 되는 부분이 있다.
+
+```java
+public MemberConstruct(String name, int age) {
+    this.name = name;
+    this.age = age;
+    this.grade = 50;
+}
+public MemberConstruct(String name, int age, int grade) {
+    this.name = name;
+    this.age = age;
+    this.grade = grade;
+}
+```
+
+바로 다음 부분이다.
+
+```java
+this.name = name;
+this.age = age;
+
+이때 `this()` 라는 기능을 사용하면 생성자 내부에서 자신의 생성자를 호출할 수 있다. 참고로 `this` 는 인스턴스 자신
+의 참조값을 가리킨다. 그래서 자신의 생성자를 호출한다고 생각하면 된다.
+
+코드를 다음과 같이 수정할 수 있다.
+
+**MemberConstruct - this() 사용**
+
+```java
+package construct;
+public class MemberConstruct {
+    String name;
+    int age;
+    int grade;
+    MemberConstruct(String name, int age) {
+        this(name, age, 50); //변경
+    }
+
+    MemberConstruct(String name, int age, int grade) {
+        System.out.println("생성자 호출 name=" + name + ",age=" + age + ",grade=" + grade);
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    }
+}
+
+
 ### 오버로딩
 관련 키워드: polymorphism
 같은 이름의 메소드를 여러개 선한할 수 있다.
@@ -54,6 +165,25 @@ export JAVA_HOME=`/usr/libexec/java_home -v 11.0.18`
 ### 오버라이딩
 관련 키워드: polymorphism
 부모와 자식간에 동일한 a()로 코드를 작성하면, 같은 이름으로 2개가 만들어지는 게 아니라, 부모의 a()에 자식에서 작성한 메소드가 덮어씌워진다.
+
+# 접근 제어자 
+
+### 필드, 메서드
+* private
+  + 클래스 안으로 속성과 기능을 숨길 때 사용, 외부 클래스에서 해당 기능을 호출할 수 없다.
+* default (package-private)
+  + 나의 패키지 안으로 속성과 기능을 숨길 때 사용, 외부 패키지에서 해당 기능을 호출할 수 없다.
+* protected
+  + 상속 관계로 속성과 기능을 숨길 때 사용, 상속 관계가 아닌 곳에서 해당 기능을 호출할 수 없다.
+* public
+  + 기능을 숨기지 않고 어디서든 호출할 수 있게 공개한다.
+
+### 클래스
+* 클래스 레벨의 접근 제어자는 `public` , `default` 만 사용할 수 있다.
+  + `private` , `protected` 는 사용할 수 없다.
+* `public` 클래스는 반드시 파일명과 이름이 같아야 한다.
+  + 하나의 자바 파일에 `public` 클래스는 하나만 등장할 수 있다.
+  + 하나의 자바 파일에 `default` 접근 제어자를 사용하는 클래스는 무한정 만들 수 있다.
 
 ---
 # static
