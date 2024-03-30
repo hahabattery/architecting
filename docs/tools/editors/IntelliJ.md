@@ -16,6 +16,9 @@ nav_order: 4
  * Code - Surround With... 메뉴 클릭 (Crtl + Alt + T / ⌥ ⌘ T)
    + 이렇게 해서 try catch를 넣을 수 있다.
 
+ * Cmd + N
+   + 생성 (override 같은 경우에 유용)
+
 ---
 # 표시 윈도우 이동
  * Command + K

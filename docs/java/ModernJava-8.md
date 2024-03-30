@@ -6,6 +6,7 @@ nav_order: 10
 ---
 
 Java 8 버전에 대한 요약
+Java 8 이전 버전에 대한 내용은 맨 하단에 있다.
 
 # Lamda
 
@@ -354,3 +355,21 @@ duration = duration.minusDays(duration.toDaysPart());
 
 ![](/images/java/time-formatter-1.png)
 ![](/images/java/time-formatter-2.png)
+
+
+# Java 5
+
+### 오토 박싱(Auto-boxing), 오토 언박싱(Auto-Unboxing)
+개발자들이 오랜기간 개발을 하다 보니 기본형을 래퍼 클래스로 변환하거나 또는 래퍼 클래스를 기본형으로 변환하는
+일이 자주 발생했다. 그래서 많은 개발자들이 불편함을 호소했다.
+자바는 이런 문제를 해결하기 위해 자바 1.5부터 오토 박싱(Auto-boxing), 오토 언박싱(Auto-Unboxing)을 지원한
+다.
+
+
+```java
+Integer boxedValue = value; // 오토 박싱(Auto-boxing)
+// Wrapper -> Primitive
+int unboxedValue = boxedValue; // 오토 언박싱(Auto-Unboxing)
+```
+
+오토 박싱과 오토 언박싱은 컴파일러가 개발자 대신 `valueOf` , `xxxValue()` 등의 코드를 추가해주는 기능이다.

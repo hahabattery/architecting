@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Collections
+title: Classes
+description: Java의 여러가지 흥미로운 클래스들을 알아본다.
 parent: Java
 nav_order: 10
 ---
