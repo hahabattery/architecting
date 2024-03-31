@@ -7,6 +7,8 @@ nav_order: 1
 
 
 # Resources
+* [Javascript Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+  + This documents is quite confused, because it doesn't differentiate old version of java (such as ES3)  and ECMAScript 3/5.
 * [Microsoft JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
 * [Catsb's Dlog JavaScript(JavaScript의 내부 동작에 대한 설명글)](https://catsbi.oopy.io/0f510a03-8f5e-4683-82ad-96a123b228f2) 
 
