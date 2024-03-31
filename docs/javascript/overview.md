@@ -14,6 +14,8 @@ nav_order: 1
 
 
 # inflearn의 자바스크립트 강좌
+튜토리얼 완독 + inflearn 파일 다시 보고 tutorial 위주로 편집하기.
+
 inflearn 의 자바스크립트 강좌를 정리한 내용 (https://github.com/bitedd/Examples/tree/master/JavaScript/inflearn-javascript-bible) 을 확인하던 중.
 이론적인 내용이 많아서 진도를 많이 빼긴 어렵다.
 “es5-advanced의 DER관련 내용을 보고 있음”  ← 내용이 익숙하지 않아서, 반복적으로 내용을 확인해야 된다.
@@ -117,27 +119,6 @@ console.log('다음 작업');
 
  * 크롬에서 개발자 모드에서 Source 탭으로 들어가면 소스가 표시되고, breakpoint를 추가할 수 있다.
  * JavaScript 소스에 debugger; 추가하면, 따로 breakpoint를 추가하지 않아도 된다.
-
-
-# closure
-
- * inner function은 외부함수가 return되더라도 항상 외부 함수의 변수나 파라미터에 접근가능하다.
-
-|![closure](/images/javascript/closure-1.png)|
-|:--:|
-|*closure - 1*|
-
-|![closure](/images/javascript/closure-2.png)|
-|:--:|
-|*closure - 2*|
-
-|![closure](/images/javascript/closure-3.png)|
-|:--:|
-|*closure - 3*|
-
-|![closure](/images/javascript/closure-4.png)|
-|:--:|
-|*closure - 4*|
 
 
 ---

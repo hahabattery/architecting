@@ -9,11 +9,8 @@ JavaScript의 비동기적인 특성에 대해서 정리한다.
 
 ---
 # 리소스들
-* Medium - How JavaScript works_ Event loop and the rise of Async programming.png 
-  + https://www.howdy-mj.me/javascript/asynchronous-programming <= 위 글의 번역 정리본
-
-
-
+* Medium - How JavaScript works_ Event loop and the rise of Async programming
+  + https://www.howdy-mj.me/javascript/asynchronous-programming (한국어 번역본)
 
 
 ---
@@ -123,7 +120,7 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Pr
 
 
 ### promise의 응용
- * node.js에서 mysql은 callback 형식으로 작동한다. 쿼리문을 수행 후, callback을 통해 처리하는 방식이다.
+ * node.js에서 mysql 라이브러리는 callback 형식으로 작동한다. 쿼리문을 수행 후, callback을 통해 처리하는 방식이다.
  * 예를들어 회원가입을 할 때, 먼저 중복된 정보가 있는 지 검사를 해야 하며, 중복 된 정보가 없다면 데이터베이스에 회원 정보를 추가하는 예제 코드이다.
 
 ```javascript
@@ -188,7 +185,7 @@ const queryExec = sql => new Promise ((resolve, reject) => {
 })()
 ```
 
- * 매우 깔끔하게 변경되었다. 그러나, 이 코드에도 문제가 있습니다. 여기서 필요한 것은 res1 ~ res5 까지의 데이터입니다. 하지만 res1을 가져온 다음에 res2를 가져오고, res3을 가져오고 등의 방식으로 실행되기 때문에 시간이 낭비된다.
+ * 매우 깔끔하게 변경되었다. 그러나, 이 코드에도 문제가 있습니다. 여기서 필요한 것은 res1 ~ res5 까지의 데이터이다. 하지만 res1을 가져온 다음에 res2를 가져오고, res3을 가져오고 등의 방식으로 실행되기 때문에 시간이 낭비된다.
  * 즉, 최종 코드가 처리 되기 까지 걸리는 시간은 모든 쿼리문이 실행 시간의 합과 동일하다.
  * Query Time 1 + Query Time 2 + ... + Query Time n = 최종 실행 까지 걸리는 시간
 
@@ -349,7 +346,6 @@ posts.then(console.log);
 
 
 
-
 ---
 # async (axio)
 
@@ -363,3 +359,28 @@ posts.then(console.log);
 # fetch
  * 최신 브라우저에 추가된 API이다.
  * 하지만, 작성하는데 여러가지를 신경써야될게 많아서 많이는 안쓰이는 듯 하다.
+
+
+---
+# 동기 함수 vs 비동기 함수
+JavaScript에서 비동기 함수와 동기 함수를 구분하는 것은 중요한데, 때로는 이를 판별하기가 어려울 수 있습니다. 일반적으로 다음과 같은 방법으로 구분할 수 있습니다:
+
+* 1. 콜백 함수 유무:
+비동기 함수는 종종 콜백 함수를 인자로 받습니다. 이 콜백 함수는 비동기 작업이 완료되었을 때 호출됩니다.
+동기 함수는 콜백 함수를 사용하지 않습니다. 대신, 함수 호출이 완료될 때까지 프로그램의 실행이 일시 중지됩니다.
+
+* 2. Promise 또는 async/await 사용 여부:
+
+비동기 함수는 종종 Promise나 async/await를 사용하여 비동기적으로 작동합니다.
+동기 함수는 일반적으로 이러한 비동기적인 기능을 사용하지 않습니다.
+
+* 3. 이벤트 기반 함수:
+비동기 함수는 종종 이벤트 기반입니다. 즉, 특정 이벤트가 발생할 때만 실행됩니다.
+동기 함수는 주로 순차적으로 실행됩니다.
+
+* 4. 함수 이름과 문서화:
+함수의 이름과 주석을 통해 해당 함수가 비동기적인지 동기적인지 알 수 있습니다. 예를 들어, 함수 이름이 "loadData"인 경우 비동기적일 가능성이 높고, "calculateSum"과 같은 함수는 동기적일 가능성이 높습니다.
+
+
+그러나 때로는 함수의 특성에 대한 명확한 정보가 없거나, 코드를 작성한 개발자가 문서화를 제대로 하지 않았을 수 있으므로 이를 판별하는 데 어려움이 있을 수 있습니다. 이러한 경우에는 함수의 구현을 자세히 살펴보고, 외부 리소스와의 상호 작용이 있는지, 콜백 함수 또는 Promise가 있는지 확인하는 것이 도움이 될 수 있습니다.
+

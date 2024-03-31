@@ -10,8 +10,6 @@ nav_order: 3
 
 브라우저의 이벤트 관리와 JavaScript의 이벤트 처리에 대해서 정리
 
-
-
 ![](/images/javascript/browser-events-01.jpg)
 
 
