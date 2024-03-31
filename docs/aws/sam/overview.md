@@ -23,7 +23,7 @@ CDK와 다른점은 SAM의 경우 AWS의 Serverless 서비스들에 대해서만
 
 
 # Resources
- * serverlessland.com
+ * [Serverless Land](serverlessland.com)
    + serverless app을 공유하고 검증할 수 있는 사이트
 
  * https://serverlessrepo.aws.amazon.com/applications
