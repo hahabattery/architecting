@@ -8,6 +8,13 @@ nav_order: 1
 
 # 시간
 
+### Resource
+* [Hibernate – Mapping Date and Time](https://www.baeldung.com/hibernate-date-time)
+* [Hibernate - Domain Model](https://docs.jboss.org/hibernate/orm/6.1/userguide/html_single/Hibernate_User_Guide.html#domain-model)
+* [MySQL - The DATE, DATETIME, and TIMESTAMP Types](https://dev.mysql.com/doc/refman/8.0/en/datetime.html)
+* [MySQL - Date and Time Literals](https://dev.mysql.com/doc/refman/8.0/en/date-and-time-literals.html)
+
+
 ### 시간관련 해서 나오는 단어
 * epoch
   + (중요한 사건·변화들이 일어난) 시대
@@ -48,6 +55,80 @@ TemporalUnit` 인터페이스는 날짜와 시간을 측정하는 단위를 나�
 TemporalField` 인터페이스는 날짜와 시간을 나타내는데 사용된다. 주로 사용되는 구현체는
 `java.time.temporal.ChronoField` 열거형으로 구현되어 있다.
 
+
+### 시간 관련 Trouble Shooting
+
+##### DB 타임존(혹은 세션 타임존)과 시간이 다른 경우
+어플리케이션이 동작하는 타임존 환경 설정과 DB의 타임존 설정이 다른 경우의 동작에 대해서 헷갈리기 쉽다.
+
+TestContainer를 가지고 이러한 동작에 대해서 테스트할 수 있을거 같다.
+
+DB가 Asia/Seoul이고, 어플리케이션 환경이 UTC인 경우
+
+
+* 테스트1 - 어플리케이션에서 시간정보를 만들어서 DB에 전달하는 경우
+  + 타임존 정보를 이용해서 어플리케이션의 타임존과 DB 타임존(혹은 세션)이 다르다면, 시간형태의 정보로 조회하는 경우에는 타음존을 DB 타임존(혹은 세션)에 맞춰서 변경해주기도 한다(Spring JPA는 이러한 동작을 하는 것을 확인)
+* 테스트2 - DB에서 조회한 값을 어플리케이션 로그에서 찍어보기
+  + 타임존 정보가 다를 경우, DB에서 조회한 값을 어플리케이션 조회할 때, 시간 정보를 변경처리하나?
+
+
+### timezone setting(JDBC And Application)
+
+##### JDBC (URL Param)
+
+DB timezone could be set through jdbc connection string.
+
+```
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?connectionTimeZone=UTC
+    username: root
+    password:
+```
+
+or we can set spring boot property
+
+```properties
+spring.jpa.properties.hibernate.jdbc.time_zone=UTC
+```
+
+##### Application (JVM Default Timezone)
+
+And we have to set JVM Default Timezone. JDBC Driver might convert the provided timestamp values from the JVM time zone to the database timezone.
+This could be done through various way. 
+
+- System Environment Variable
+
+```
+export TZ="America/Sao_Paulo"
+```
+
+- Docker Setting
+
+```
+TZ: Asia/Seoul
+```
+
+- JVM argument
+
+```
+java -Duser.timezone="Asia/Kolkata" com.company.Main
+```
+
+- Likewise, we can also set the JVM argument from the application:
+
+```java
+System.setProperty("user.timezone", "Asia/Kolkata");
+```
+
+- modify the JVM time zone from the application using the TimeZone class
+
+```java
+@PostConstruct
+void started() {
+  TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+}
+```
 
 
 
