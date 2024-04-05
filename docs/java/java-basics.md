@@ -8,6 +8,13 @@ nav_order: 1
 
 # 시간
 
+Java의 LocalDateTime은 JDBC type TIMESTAMP 으로 offset이 적용된 타임스탬프(타임존 데이터를 복구할 수 없는.. UTC로 저장되는 type은 TIMESTMAP_UTC 이라고 있다(또, 이것은 JDBC type이 아니고 SQL type이라고 한다. 용어가 매우 혼란스럽다.)이다. MySQL의 datetime data type은 오프셋이 적용된 타임스탬프 데이터이고, MySQL의 timestamp data type은 오프셋이 적용되지 않은 타임스탬프 데이터(UTC)로 저장된다.
+
+Java로 작성된 프로그램이 DB를 이용할 때 사용하는 규격을 JDBC라고 한다. JDBC는 자바로 작성된 프로그램이 데이터베이스와 상호작용하기 위한 인터페이스로 각  데이터베이스 제조사가 드라이버를 제공한다.
+
+![](/images/java/jpa-hibernate-jdbc-structure01.png)
+
+
 ### Resource
 * [Hibernate – Mapping Date and Time](https://www.baeldung.com/hibernate-date-time)
 * [Hibernate - Domain Model](https://docs.jboss.org/hibernate/orm/6.1/userguide/html_single/Hibernate_User_Guide.html#domain-model)
