@@ -32,7 +32,6 @@ Java로 작성된 프로그램이 DB를 이용할 때 사용하는 규격을 JDB
   + ChronoField(TemporalField를 구현)는 날짜 및 시간을 나타내는 데 사용되는 열거형이다. 이 열거형은 다양한 필드를 통해 **날짜와 시간의특정 부분을 나타낸다.** 여기에는 연도, 월, 일, 시간, 분 등이 포함된다. 
 
 
-
 ### 날짜와 시간의 핵심 인터페이스
 
 ![](/images/java/temporal-accessor-and-temporal-amount.png)
