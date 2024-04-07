@@ -3,6 +3,7 @@ layout: default
 title: Tutorial
 nav_order: 3
 parent: Kubernetes
+grand_parent: Container
 ---
 
 # 기본적인 개념

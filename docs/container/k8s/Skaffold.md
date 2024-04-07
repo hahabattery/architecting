@@ -3,6 +3,7 @@ layout: default
 title: Skaffold
 nav_order: 10
 parent: Kubernetes
+grand_parent: Container
 ---
 
 # Skaffold 설치

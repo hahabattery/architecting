@@ -3,6 +3,7 @@ layout: default
 title: Kubernetes Dashboard
 nav_order: 3
 parent: Kubernetes
+grand_parent: Container
 ---
 
 Docker Desktop 이용시의 Kubernetes Dashboard를 생성하는 내용.

@@ -3,6 +3,7 @@ layout: default
 title: Trouble Shooting
 nav_order: 3
 parent: Kubernetes
+grand_parent: Container
 ---
 
 

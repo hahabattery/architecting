@@ -3,6 +3,7 @@ layout: default
 title: Docker Desktop
 nav_order: 3
 parent: Kubernetes
+grand_parent: Container
 ---
 
 local PC에서 동작테스트하는 내용을 정리

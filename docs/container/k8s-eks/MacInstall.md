@@ -3,6 +3,7 @@ layout: default
 title: Mac
 nav_order: 3
 parent: EKS
+grand_parent: Container
 ---
 
 mac에서 쿠버네티스 + EKS 관련 개발환경을 구축하는 내용을 정리함.

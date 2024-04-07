@@ -3,6 +3,7 @@ layout: default
 title: Minikube
 nav_order: 10
 parent: Kubernetes
+grand_parent: Container
 ---
 
 minikube  관련 내용,

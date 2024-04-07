@@ -3,6 +3,7 @@ layout: default
 title: Trouble Shooting
 nav_order: 3
 parent: EKS
+grand_parent: Container
 ---
 
 
