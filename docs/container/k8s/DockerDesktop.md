@@ -1,3 +1,10 @@
+---
+layout: default
+title: Docker Desktop
+nav_order: 3
+parent: Kubernetes
+---
+
 local PC에서 동작테스트하는 내용을 정리
 
 [Docker Desktop / Additional resources / Deploy on Kubernetes](https://docs.docker.com/desktop/kubernetes/)
