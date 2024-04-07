@@ -6,6 +6,7 @@ grand_parent: Datastore
 parent: OpenSearch
 ---
 
+[Amazon OpenSearch Service’s vector database capabilities explained](https://aws.amazon.com/ko/blogs/big-data/amazon-opensearch-services-vector-database-capabilities-explained/)
 
 
 ---
