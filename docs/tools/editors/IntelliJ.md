@@ -6,18 +6,20 @@ parent: Editors
 nav_order: 4
 ---
 
+ * Alt + F1 
+   + 현재 열고 있는 파일을 좌측 윈도우에서 표시
 
  * Cmd + Shift + B 
    + 정의로 이동 (dependency injection된 객체를 생성한 곳으로 이동할 때 유용)
 
- * Shift + Ctrl + A 나 ⇧⌘A
+ * Shift + Ctrl + A 나 Shift + Cmd + A
    * Find Action 처리할 수 있는 액션을 검색
 
  * Code - Surround With... 메뉴 클릭 (Crtl + Alt + T / ⌥ ⌘ T)
    + 이렇게 해서 try catch를 넣을 수 있다.
 
  * Cmd + N
-   + 생성 (override 같은 경우에 유용)
+   + 생성 (override 하는 경우에 유용)
 
 ---
 # 표시 윈도우 이동
