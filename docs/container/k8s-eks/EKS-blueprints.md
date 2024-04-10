@@ -2,7 +2,7 @@
 layout: default
 title: EKS Blueprints
 nav_order: 3
-parent: 
+parent: EKS
 grand_parent: Container
 ---
 

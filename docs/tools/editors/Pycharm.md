@@ -30,11 +30,33 @@ new environment 에서 원하는 경로로 설정하고 OK!
 * Find Action
   +  Cmd + Shift + A
 
+* Context Action
+  + Alt + Enter
+
+* Code Completion
+  + Ctrl + Space
+
+* Reformat Code
+  + Cmd + Alt + L
+
+
+* Optimize Import
+  + Ctrl + Alt + O
+
+
+### Debugging
+* Break Point
+  + Cmd + F8
+  
+* Continue
+  + Alt + Cmd + R  
 
 # Jupyter Notebook  
 * Ctrl + Enter
   + Run Cell
 
+* Debug Cell
+  + Alt + Shift + Enter
 
 Scientific Mode 
 2023/2 버전으로 roll back하면 된다고 한다.
