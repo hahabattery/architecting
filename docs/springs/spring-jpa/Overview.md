@@ -8,6 +8,8 @@ nav_order: 1
 
 
 # 리소스
+ * [Jakarta Persistence](https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0.html)
+
  * [Spring-Jpa Best Practices](https://github.com/cheese10yun/spring-jpa-best-practices)
 
 
@@ -28,6 +30,15 @@ JPA는 기술 명세이다. JPA에 대해서 정리한다.
 ### 관련 패키지
 
  * javax.persistence 로 시작하는 패키지는 JPA의 스펙에 해당하는 인터페이스
+
+
+# mapping between Java type and database types
+ * [How to persist LocalDate and LocalDateTime with JPA 2.1](https://thorben-janssen.com/persist-localdate-localdatetime-jpa/)
+   + This article explains about relationship among Java, JPA, Hibernate.
+
+The mapping between Java type and database types can be influenced by the specific JPA implemetation (like hibernate) and database.
+
+JPA handles the conversion between the Java type and the MySQL type. When reading from the database, it converts the DATETIME value to Timestamp or LocalDateTime. When writing to the database, it converts the Timestamp or LocalDateTime value to DATETIME.  This automatic conversion works for many common Java types. For more complex types, or for custom conversions, you can use the @Convert annotation to specify a custom AttributeConverter class that handles the conversion.
 
 
 # Hibernate change orders of query execution.

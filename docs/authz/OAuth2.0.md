@@ -9,6 +9,8 @@ OAuth (Open Authorization)
 
 OAuth 2.0는 다른 application에서 사용자의 데이터에 접근하는 것을 허가를 해준다는 의미이다.
 
+OAuth 2.0을 이용해서 자사의 API를 파트너등 외부 시스템에 제공하면서 사용자의 ID/PASSWD는 보호할 수 있다.
+
 OAuth를 authorization이나 delegated authorization이라고 하기도 한다.
 
 > In many ways, you can think of the OAuth token as a "access card" at any office/hotel. These tokens provides limited access to someone, without handing over full control in the form of the master key.
