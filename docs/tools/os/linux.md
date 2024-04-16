@@ -31,6 +31,16 @@ top -H
 F -> s  (top명령 실행상태에서)
 ```
 
+* k - kill process
+
+##### Sorting the process list
+* ‘M’ to sort by memory usage
+* ‘P’ to sort by CPU usage
+* ‘N’ to sort by process ID
+* ‘T’ to sort by the running time
+* ‘R’ to sort by 오름차순과 내림차순을 토글 변경합니다.
+
+
 ### ps
 
  * 스레드별로 조회
