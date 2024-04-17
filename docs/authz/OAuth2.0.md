@@ -32,7 +32,7 @@ Authorization Server로 부터 얻는 고유 id값을 저장해서 DB에서 소�
 
 # 용어
 
-![](doc/imgs/OAuth2-Terminology.png)
+![](/images/authz/OAuth2-Terminology.png)
 
 https://oauth.net/2 <= OAuth 에 대한 용어와 이론, grant type에 대해서 나와있음
 
@@ -51,7 +51,7 @@ The OAuth framework specifies several grant types for different use cases.
 
 ### Authorization Code grant type
 
-| ![](doc/imgs/OAuthFlow-AuthorizationCodeGrantType.png) |
+| ![](/images/authz/OAuthFlow-AuthorizationCodeGrantType.png) |
 |:--:|
 | *Authorization Code Grant Type* |
 
@@ -93,7 +93,7 @@ Authorization Code Grant type의 경우 Auth Server에 2번 요청을 보내서 
 
 위의 1,2번 스텝을 한번에 처리하는 방식을 implicit grant type 이라고 한다.
 
-| ![](doc/imgs/OAuthFlow-ImplicitGrantType.png) |
+| ![](/images/authz/OAuthFlow-ImplicitGrantType.png) |
 |:--:|
 | *Implicit Grant Type* |
 
@@ -119,7 +119,7 @@ step 3에서 client가 Auth Server로 보내는 정보
 > This flow will be usually followed by the enterprise applications who want to separate the Auth flow and business flow.
 > Once the Auth flow is seprarated different applications in the same organization can leverage it.
 
-| ![](doc/imgs/OAuthFlow-PasswordGrantResourceOwnerCredentialsGrantType.png) |
+| ![](/images/authz/OAuthFlow-PasswordGrantResourceOwnerCredentialsGrantType.png) |
 |:--:|
 | *Resource Owner Credentials(Password) grant type* |
 
@@ -140,7 +140,7 @@ step 2에서 client가 Auth Server로 보내는 정보
 >
 > We use this authentication flow only if there is no user and UI involved(사용자의 인터렉션이 없이 client_id와 client_secret이 맞으면 토큰을 발급해줌). Like in the scenarios where 2 different application want to share data between them using backend APIs.
 
-| ![](doc/imgs/OAuthFlow-ClientCredentialsGrantType.png) |
+| ![](/images/authz/OAuthFlow-ClientCredentialsGrantType.png) |
 |:--:|
 | *Client Credentials grant type* |
 
@@ -164,7 +164,7 @@ step 1에서 client가 Auth Server로 보내는 정보
 >Even in the resource owner credentials grant types **we should not store the user credentials for reauthentication purpose instead we should reply on the refresh tokens**
 
 
-| ![](doc/imgs/OAuthFlow-RefreshTokenGrantType.png) |
+| ![](/images/authz/OAuthFlow-RefreshTokenGrantType.png) |
 |:--:|
 | *Refresh Token grant type* |
 
@@ -195,7 +195,7 @@ step 3에서 client가 Auth Server로 보내는 정보
 * 6. Authorization Server verifies the code_challenge and code_verifier. If they are valid it respond with ID Token and Access Token (and optionally, a Refresh Token).
 
 
-| ![](doc/imgs/OAuthFlow-PKCEGrantType.png) |
+| ![](/images/authz/OAuthFlow-PKCEGrantType.png) |
 |:--:|
 | *PKCE grant type* |
 

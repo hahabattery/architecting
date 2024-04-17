@@ -30,7 +30,7 @@ Authorization Code Injection Attack을 막을 수 있다.
 
 
  * Authorization Code Grant Flow
-![](./doc/imgs/Authorization-Code-Flow-Diagram.png)
+![](/images/authz/Authorization-Code-Flow-Diagram.png)
 
 위 그림은 Authorization Code Flow를 나타내는 그림.
 
@@ -56,7 +56,7 @@ https://authorization-server.com/authorize?
 ```
 
 아마도 사용자는 이 단계에서 아래와 같은 화면에서 구글 아이콘을 클릭하게 될 것이다.
-![](./doc/imgs/SNS-Login-Screen-1.png)
+![](/images/authz/SNS-Login-Screen-1.png)
 
 이 단계에서 만약 자동로그인이나 세션이 유효하지 않은 상태로 로그인이 필요하면, 카카오나 페이스북에 로그인하게 됨.
 
