@@ -79,7 +79,7 @@ SEQUENCE 전략은 id 값을 설정하지 않고(null) generator에 매핑된 Se
   + 2) 50개를 모두 사용하면 그 때 또 next call을 날려서 다시 50개를 올려 놓는다. (DB는 sequence가 101로 세팅된다.) 메모리에서 sequence를 가져와 51부터 사용할 수 있다.
   + create sequence MEMBER_SEQ start with 1 increment by 50
   + 예시)
-  ```
+```
 // 1(1로 맞추기 위한 dummy 호출), 51(최적화를 위한 호출)
 em.persist(member1); // next call 2번 호출
 em.persist(member2); // MEM
@@ -190,8 +190,8 @@ null fields가 생길 수밖에 없는 점이 이 전략의 특징인데, null�
 - Each class in a hierarchy mapped to a separate table and hence, provides poor support for polymorphic relationships
 - 각각이 테이블로 분리되어있기 때문에 **requires SQL union** or separate SQL queries for each subclass
 
-* 전체 조회시에 TABLE_PER_CLASS 인 경우에 base 클래스에 대해서 조회하면 union 쿼리가 실행된다 ㄷㄷㄷ
-* 중요! 데이터베이스 종류에 따라서 \@Id의 GenerationType을 TABLE 타입을 사용해야 함. 또한, sequence 테이블을 이용하게 되므로, 엔티티 클래스에 sequence 테이블 매핑까지 처리해야 한다.
+* **전체 조회시에 TABLE_PER_CLASS 인 경우에 base 클래스에 대해서 조회하면 union 쿼리가 실행된다**
+* 중요! 데이터베이스 종류에 따라서 @Id의 GenerationType을 TABLE 타입을 사용해야 함. 또한, sequence 테이블을 이용하게 되므로, 엔티티 클래스에 sequence 테이블 매핑까지 처리해야 한다.
 
 
 ### JOINED

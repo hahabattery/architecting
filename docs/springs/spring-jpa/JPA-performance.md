@@ -69,6 +69,64 @@ EntityQL 이란게 있었다고!?
    + https://jojoldu.tistory.com/558
 
 
+# 성능팁
+* [Spring Data JPA isNew 메서드](https://leegicheol.github.io/jpa/jpa-is-new/)
+
+```java
+@Transactional
+public <S extends T> S save(S entity) {
+    Assert.notNull(entity, "Entity must not be null.");
+    if (this.entityInformation.isNew(entity)) {
+        this.em.persist(entity);
+        return entity;
+    } else {
+        return this.em.merge(entity);
+    }
+}
+```
+=> DB에서 먼저 조회해서 값이 있는지 체크하게 된다.
+
+
+merge는 일반적인 update가 아닌, 데이터 자체를 덮어씌우는 update를 수행한다. 그래서 수정하지 않는 값도 변경처리되는 경우가 생기게 된다.
+
+JPA의 Auditing 기능을 사용하면 isNew 메서드를 쉽게 구현할 수 있다.
+
+Auditing은 @CreatedDate, @CreatedBy, @LastModifiedBy, @LastModifiedDate
+네 개의 Annotation을 지원한다.
+
+isNew 메서드 호출 시점에 @CreatedDate가 아직 null이라면 DB에 insert가 되지 않은 시점이라고 판단할 수 있게 된다.
+
+```java
+@Data
+@Entity
+@EntityListeners(AuditingEntityListener.class)
+public class Users implements Persistable<String> {
+
+    @Id
+    private String id;
+
+    private String name;
+
+    private int age;
+
+    @CreatedDate
+    private LocalDateTime createDate;
+
+
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public boolean isNew() {
+        return createDate == null;
+    }
+
+}
+```
+
+
 ---
 # 우아한형제들
 
