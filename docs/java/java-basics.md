@@ -278,6 +278,7 @@ public MemberConstruct(String name, int age, int grade) {
 ```java
 this.name = name;
 this.age = age;
+```
 
 이때 `this()` 라는 기능을 사용하면 생성자 내부에서 자신의 생성자를 호출할 수 있다. 참고로 `this` 는 인스턴스 자신
 의 참조값을 가리킨다. 그래서 자신의 생성자를 호출한다고 생각하면 된다.
