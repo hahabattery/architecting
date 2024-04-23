@@ -8,6 +8,7 @@ nav_order: 4
 
  * Enter Full Screen
    + Cmd + Ctrl + F
+   + press again (exit full screen)
 * capslock 이 한/영 처리인데 길게누르면 원래 capslock 기능으로 동작한다
 
 # Desktop 
