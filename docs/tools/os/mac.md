@@ -11,6 +11,9 @@ nav_order: 4
    + press again (exit full screen)
 * capslock 이 한/영 처리인데 길게누르면 원래 capslock 기능으로 동작한다
 
+
+
+
 # Desktop 
 
 * control + up mission control 표시
@@ -23,8 +26,19 @@ nav_order: 4
 
 
 
-# Chrome hard refresh
-'Command + Shift + R' 이나 'Shift + Reload button'
+# Chrome 
+
+* hard refresh
+  + 'Command + Shift + R' 이나 'Shift + Reload button'
+
+# Safari 
+
+* refresh 
+  + Cmd + R
+
+* Move Tab
+  + Ctrl + Tab
+  + Ctrl + Shift + Tab
 
 
 # atom

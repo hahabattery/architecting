@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Annotations
-grand_parent: Springs
-parent: Spring Frameworks
+parent: Springs
 nav_order: 4
 ---
 
@@ -298,4 +297,7 @@ public calss ForExample{
 ![](doc/imgs/AutowirevsInjectvsResource.png)
 
 
+# Lombok
+
+* [@Data](https://projectlombok.org/features/Data)
 

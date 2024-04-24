@@ -6,6 +6,9 @@ parent: Editors
 nav_order: 4
 ---
 
+* Cmd + Shift + E
+  + explorer
+
 # VSCode
 
  * 파일을 더블 클릭하면, 탭이 고정됨. 한번 클릭하면 클릭때마다 바뀜.
