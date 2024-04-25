@@ -119,5 +119,12 @@ List<Board> list =
 		.fetch();
 ```
 
- 
+# Inner Class Projection
+inner class에 대해서 Projection하는 경우 
+* Data JPA의 named query에서는
+  + 현재 JPQL에서는 Inner Class에 직접 값을 넣을 수 있도록 하는 기능은 지원하지 않는다. 그래서 Inner Class의 필드들을 새로운 DTO 클래스를 만들어 받아야 한다.
+
+* QueryDSL에서는 
+  + QOuterClass_InnerClass 형태로 이용해야 한다.
+
  

@@ -9,13 +9,14 @@ nav_order: 4
  * Alt + F1 
    + 현재 열고 있는 파일을 좌측 윈도우에서 표시
 
+
  * Cmd + Shift + B 
    + 정의로 이동 (dependency injection된 객체를 생성한 곳으로 이동할 때 유용)
 
  * Shift + Ctrl + A 나 Shift + Cmd + A
    * Find Action 처리할 수 있는 액션을 검색
 
- * Code - Surround With... 메뉴 클릭 (Crtl + Alt + T / ⌥ ⌘ T)
+ * Code - Surround With... 메뉴 클릭 (Crtl + Alt + T / ⌘ ⌥ T)
    + 이렇게 해서 try catch를 넣을 수 있다.
 
  * Cmd + N
@@ -43,6 +44,15 @@ intelliJ에서 VM Option 추가시에 아래형태대로 옵션까지 입력해�
  * GitToolBox <- 라인별로 수정사항 알려줌
  * Maven Helper <- maven dependeny 리스트 표시할 때 유용함.
 
+---
+# Search
+ * 어떤 항목이 사용된 위치를 검색
+   * Alt + F7
+
+ * Class찾기
+   * Ctrl + N
+ * 파일 찾기
+   * Ctrl + Shift + N or Command + Shift + N
 
 ---
 # 자동완성
@@ -110,10 +120,7 @@ public void $methodName$() throws Exception {
    * 함수 상단을 선택후에 Ctrl+Shift+ArrowDown 혹은 ArrowUp
 
 
- * Class찾기
-   * Ctrl + N
- * 파일 찾기
-   * Ctrl + Shift + N or Command + Shift + N
+
 
  * Navigate Back / Forward (소스 편집하면서 이동하기 편함)
    * (Windows) Ctrl + Alt + 좌우화살표
@@ -124,8 +131,7 @@ public void $methodName$() throws Exception {
    * (Mac) Command + E
 
 
- * 어떤 항목이 사용된 위치를 검색
-   * Alt + F7
+
 
 ### 이동
  * 다음 에러로 이동
@@ -137,6 +143,8 @@ public void $methodName$() throws Exception {
 ### 괄호로 이동
  * Ctrl + [ or ]
  * Alt + Command + [ or ]
+
+
 
 ---
 # Refactoring
