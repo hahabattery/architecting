@@ -26,17 +26,25 @@ SAM은 AWS의 Serverless 서비스들에 대해서만 사용 가능하다.
 # Resources
 
 * [AWS CDK Reference Documentation](https://docs.aws.amazon.com/cdk/api/v2/)
+* [AWS CDK Labs](https://github.com/cdklabs)
 * [CDK Workshop](https://cdkworkshop.com/)
 * https://github.com/aws-samples
 * https://github.com/aws-samples/aws-cdk-examples
 * https://github.com/aws-samples/serverless-patterns
 * [Santa’s AWS Workshop!](https://github.com/collin-smith/santasworkshop)
 
+* [Amazon EKS 모법사례](https://aws.github.io/aws-eks-best-practices/)
+* [DevOps 문화를 녹인 Amazon ECS 클러스터 CDK로 구축하기](https://github.com/aws-samples/aws-ecs-devops-using-aws-cdk)
+
+
+### AWS CDK Construct Hub
+https://constructs.dev
+
 
 ### CDK Solutions Constructs
 * [AWS Solutions Constructs](https://docs.aws.amazon.com/solutions/latest/constructs/welcome.html)
 
-긴밀히 사용되는 AWS resource들을 합성해서 하나의 Constructs로 제공한다.
+긴밀히 사용되는 AWS resource들을 합성해서 모범사례를 기반으로 하나의 Constructs로 제공한다.
 
 * [AWS Solutions Constructs – A Library of Architecture Patterns for the AWS CDK](https://aws.amazon.com/ko/blogs/aws/aws-solutions-constructs-a-library-of-architecture-patterns-for-the-aws-cdk/)
 * [AWS Solutions Constructs](https://docs.aws.amazon.com/solutions/latest/constructs/welcome.html)
