@@ -119,7 +119,9 @@ public void $methodName$() throws Exception {
  * 함수 코드 순서 이동
    * 함수 상단을 선택후에 Ctrl+Shift+ArrowDown 혹은 ArrowUp
 
-
+ * 구현 확인 
+   + Alt + Cmd + B
+   + Cmd + U <= 반대 방향
 
 
  * Navigate Back / Forward (소스 편집하면서 이동하기 편함)
@@ -129,8 +131,6 @@ public void $methodName$() throws Exception {
  * 최근 파일로 이동시
    * (Windows) Ctrl + E
    * (Mac) Command + E
-
-
 
 
 ### 이동
