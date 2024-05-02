@@ -52,3 +52,10 @@ RUN apt-get update && apt-get install -y tzdata
 ENV TZ=Your/Timezone
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 ```
+
+### Application Setting
+You can set timezone through vm option, while using Java application
+
+```
+java -Duser.timezone=UTC -jar YourApp.jar
+```

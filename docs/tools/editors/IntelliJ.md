@@ -202,6 +202,9 @@ public void $methodName$() throws Exception {
    * 클래스 java를 잘못 생성한 경우에도 소스에서 Shift+F6로 변경하면 파일 이름까지 같이 변경되었다.
    * 변수명 변경시에 Shift+F6으로 동일한 변수명을 모두 수정가능.
 
+ * Change function signature
+   + Cmd + F6
+
 ### 대문자로 변경
  * 변경한 부분을 선택한 상태에서 Ctrl + Shift + U
 

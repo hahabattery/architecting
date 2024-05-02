@@ -9,6 +9,7 @@ parent: Datastore
 ![](/images/datastore/목적에맞는데이터베이스사용과현대화.png)
 
 
+
 ---
 # DB 설계관련 pdf
  * Database Performance at Scale(A Practical Guide)
