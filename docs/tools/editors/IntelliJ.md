@@ -209,7 +209,6 @@ public void $methodName$() throws Exception {
  * 변경한 부분을 선택한 상태에서 Ctrl + Shift + U
 
 
-
 ### 코드 가독성
  * reformat
    * Shift+Ctrl(Cmd)+Alt+L
