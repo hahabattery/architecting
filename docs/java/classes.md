@@ -15,3 +15,4 @@ The JavaBeans event model allows JavaBeans components to generate events and hav
 The PropertyChangeSupport class provides a simple mechanism for managing listeners and firing property change events. It maintains a list of registered listeners and provides methods to add, remove, and notify listeners when a property's value changes.
 
 Overall, the PropertyChangeSupport class simplifies the implementation of the observer pattern within JavaBeans components, allowing for a more modular and loosely coupled design. This makes it easier to develop and maintain complex Java applications, particularly those with graphical user interfaces.
+

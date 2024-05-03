@@ -157,18 +157,16 @@ public void $methodName$() throws Exception {
    * 생략할 변수를 선택하고 Ctrl+Alt+N 으로 간단히 표현 가능.
 
 ### Extract (추출)
- * 변수 추출
-   * 메서드선택후 Ctrl(Cmd) + Alt + V 하면 리턴타입이 설정됨.
-   * 하드코딩된 문자열을 선택후 Ctrl(Cmd) + Alt + V 하면 외부 변수로 분리
 
- * 메소드의 아규먼트 추출
-   * 메소드의 아규먼트 선택후 Ctrl(Cmd) + Alt + V
+* Alt + CMD + M (함수로 추출할 코드라인을 선택후)
+  + extract Method
+* Alt  + CMD + V (하드코딩된 문자열을 선택후)
+  + extract Variable, 메소드의 아규먼트 추출
+* Alt + CMD + C (파라미터로 추출할 값을 선택후)
+  +  extract Constant
+* Alt + CMD + P (파라미터로 추출할 값을 선택후)
+  + extract Parameter
 
- * 파라미터 추출하기 (Extract -> Parameter)
-   * 파라미터로 추출할 값을 선택후 Ctrl(Cmd) + Alt + p
-
- * 메서드 추출
-   * 함수로 추출할 코드라인을 선택후 Ctrl(Cmd) + Alt + M
 
  * 이너클래스 추출
    * F6

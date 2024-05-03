@@ -6,6 +6,17 @@ parent: Java
 nav_order: 1
 ---
 
+# String
+new String(문자열.getBytes("charSet"), "charSet");
+
+1. 문자열을 getBytes("charSet") 메소드
+ - String을 해당 charSet으로 인코딩
+ 
+2. String 객체를 인코딩 방식을 추가하여 생성
+ - 인코딩된 문자를 Java String 객체(유니코드) 변환
+
+정리하면, String은 유니코드형태로 저장되며, 문자열 인코딩 설정을 해 놓으면, 해당 인코딩으로 표현을 해준다.
+
 # 시간
 
 Java의 LocalDateTime은 JDBC type TIMESTAMP 으로 offset이 적용된 타임스탬프(타임존 데이터를 복구할 수 없는.. UTC로 저장되는 type은 TIMESTMAP_UTC 이라고 있다(또, 이것은 JDBC type이 아니고 SQL type이라고 한다. 용어가 매우 혼란스럽다.)이다. MySQL의 datetime data type은 오프셋이 적용된 타임스탬프 데이터이고, MySQL의 timestamp data type은 오프셋이 적용되지 않은 타임스탬프 데이터(UTC)로 저장된다.
