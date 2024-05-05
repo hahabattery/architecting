@@ -1,7 +1,0 @@
----
-layout: default
-title: Springs
-nav_order: 30
-has_children: true
-permalink: /docs/springs
----
