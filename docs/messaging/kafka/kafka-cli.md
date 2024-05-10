@@ -50,6 +50,7 @@ parent: Kafka
 
 
  * 존재하지 않는 topic에 대해서 produce 하는 경우에는 default로 topic이 만들어진다.
+
 ```
 wcsong@ubuntu_test:~/kafka/kafka_2.12-2.0.0$ kafka-console-producer.sh --broker-list 127.0.0.1:90 --topic new_topic
 another message
@@ -130,14 +131,13 @@ TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSU
 first_topic     0          10              10              0               consumer-1-0436bf05-3fba-4d70-a058-27e7e31cedb8 /192.168.0.15   consumer-1
 first_topic     1          11              11              0               consumer-1-0436bf05-3fba-4d70-a058-27e7e31cedb8 /192.168.0.15   consumer-1
 first_topic     2          10              10              0               consumer-1-0436bf05-3fba-4d70-a058-27e7e31cedb8 /192.168.0.15   consumer-1
-
-
 ```
 
 
  * kafka-consumer-groups.sh 프로그램으로 offset을 reset시킬수 있다.
    * kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --to-earliest --execute --topic first_topic
- ```
+
+```
 @ubuntu_test:~/kafka/kafka_2.12-2.0.0$ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --to-earliest --execute --topic first_topic
 
 TOPIC                          PARTITION  NEW-OFFSET
@@ -158,6 +158,7 @@ first_topic     1          0               11              11              -    
 
  * kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --shift-by -2 --execute --topic first_topic
    * 2씩 이전으로 돌아가기 때문에 6개를 다시 수신하게 됨.
+
 ```
 @ubuntu_test:~/kafka/kafka_2.12-2.0.0$ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --shift-by -2 --execute --topic first_topic
 
@@ -180,6 +181,7 @@ test
 ### 유용한 기타 명령들
 
  * console producer (key, value 형식)
+
 ```command
 kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic first_topic --property parse.key=true --property key.separator=,
 key,value
@@ -187,6 +189,7 @@ another key,another value
 ```
 
  * console consumer (key, value 형식)
+
 ```
 kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning --property print.key=true --property key.separator=,
 key1, value1
