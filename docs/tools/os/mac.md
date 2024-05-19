@@ -52,11 +52,14 @@ atom .
  * netstat -nav |grep {포트}
 
 # Finder
-* 숨김파일 표시 Cmd + Shift + .
-* 파일 확장자 표시 Finder > 설정 > 모든 확장자 표시 <- 체크
+* Cmd + Shift + .
+  + 숨김파일 표시 
+* 파일 확장자 표시 
+  + Finder > 설정 > 모든 확장자 표시 <- 체크
+* Shift + Cmd + H
+  + Move to Home
 
 # 복붙
-
  * 복사 Command + C
  * 붙여넣기 Command + V
  * cmd + opt + shift + v 스타일까지 복사

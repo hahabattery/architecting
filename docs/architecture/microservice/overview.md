@@ -6,6 +6,9 @@ grand_parent: Architecture
 parent: MircoService
 ---
 
+> Microservices do not help you scale an application. It helps you scale an organization, allowing hundreds or thousands of developers to work on the codebase simultaneously.
+In microservices, clearly defined boundaries are necessary so teams can have the autonomy required to achieve mastery and purpose.
+
 ---
 # Resources
 마이크로 서비스는 러닝커브가 상당한 것 같다. 너무 고민하지 말고 친절하게 알려주는 글로 시작하자.
