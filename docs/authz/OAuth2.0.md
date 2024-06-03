@@ -16,11 +16,11 @@ OAuth를 authorization이나 delegated authorization이라고 하기도 한다.
 > In many ways, you can think of the OAuth token as a "access card" at any office/hotel. These tokens provides limited access to someone, without handing over full control in the form of the master key.
 
 
-페이스북/구글등의 로그인 인증을 이용하는 경우, 대부분은 Resource Server(페이스북 자체 API)를 사용하지 않는다다.
+페이스북/구글등의 로그인 인증을 이용하는 경우, 대부분은 Resource Server(페이스북 자체 API) 접근하지 않는다다.
 
 따라서 Access Token, Refresh Token은 실제로 잘 쓰이지 않을 것임. 
 
-또한 Client에서 access token을 검증할 수도 없기 때문에, 페이스북/구글등의 로그인 인증시에 받은 access token은 사용되지 않는다.
+또한 Client에서 access token을 검증할 수도 없기 때문에, 페이스북/구글등의 로그인 인증시에 받은 access token은 전혀 사용되지 않는 것이다.
 
 따라서 OAuth2.0 인증이 완료되면, 세션/쿠키(http-based session)나 토큰기반 인증 방식으로 client 나름의 인증 처리를 하게 되고,
 
@@ -87,11 +87,11 @@ step 5 에서 client가 Auth Server로 보내는 정보
 
 아래는 이해를 위해서 정리한 내용.
 
-Authorization Code Grant type의 경우 Auth Server에 2번 요청을 보내서 authorization code와 access token을 얻는다.
+Authorization Code Grant type의 경우 아래와 같이 Auth Server에 2번 요청을 보내서 authorization code와 access token을 얻는다.
  * 1. authorization server는 유저가 credentials(사용자명/비번)을 가지고 인증 서버와 직접 상호 작용했는지 확인.
- * 2. client는 Auth server에서 발금한 client id와  authorization code를 가지고 access token을 발행한다.
+ * 2. client는 Auth server에서 발급한 client id와  authorization code를 가지고 access token을 발행한다.
 
-위의 1,2번 스텝을 한번에 처리하는 방식을 implicit grant type 이라고 한다.
+위의 1,2번 스텝을 한번에 처리하는 방식을 implicit grant type 이라고 한다. User와 Client 간의 관계를 확인하는(정말 User가 인증서버로부터 받은 인증정보(=authorization code)를 Client가 가지고 있는지) 과정이 생략된다. CSRF공격으로 인해 hijacking 되는 경우에도 인증처리가 진행되어버린다.
 
 | ![](/images/authz/OAuthFlow-ImplicitGrantType.png) |
 |:--:|
@@ -180,11 +180,12 @@ step 3에서 client가 Auth Server로 보내는 정보
 
 
 ### PKCE(Proof Key for Code Exchange)
->When public clients(eg., native and single-page application) request Access Token, some additional security concnerns are posed that are not mitigated by the Authorization Code Flow alone.
+>When public clients(eg., native and single-page application) request Access Token, some additional security concerns are posed that are not mitigated by the Authorization Code Flow alone.
 >This is because public clients cannot securely store a Client Secret.
 >
 >Given these situations, OAuth 2.0 provides a version of the Authorization Code Flow for public client applications which makes use of a Proof Key for Code Exchange (PKCE).
 
+* 결국, PKCE의 목적은 OAUTH인증 흐름에 하나의 레이어를 더 추가해서 보안을 강화한 수단이다.
 
 **PCKE-enhanced Authorization Code Flow**
 * 1. Once user clicks login, client app creates a cryptographically-random **code_verifier** and from this generates a **code_challenge**.
