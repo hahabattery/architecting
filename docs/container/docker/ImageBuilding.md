@@ -14,6 +14,7 @@ https://github.com/docker/docs/blob/2d8b420d3c49712ec4a7bcec1464278fa4c41936/doc
 * 기존에는 실제 도커로 동작시키려고 하는  CPU 아키텍쳐에 해당하는 머신을 준비했어야 했으나,
 * 최근에는 buildx라는 툴로는 크로스 이미지 빌딩이 되는 걸로 보임.
 
+* [Multi-arch build and images, the simple way](https://www.docker.com/blog/multi-arch-build-and-images-the-simple-way/)
 
 ---
 # Getting started with Docker for Arm on Linux
