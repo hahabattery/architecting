@@ -8,9 +8,10 @@ nav_order: 1
 
 Keycloak의 페이지를 입맛에 맞게 변경하는 방법을 공부 중… ← Apps/Authentication 을 참조할 것.
 
-https://www.baeldung.com/spring-boot-keycloak  ← 보던 중
+* https://www.baeldung.com/spring-boot-keycloak  ← 보던 중
 
 
+* [AWS 에서 Keycloak 기반 서비스 인증 체계 구축 하기 (1편) - 키클록(Keycloak) 이란](https://devocean.sk.com/blog/techBoardDetail.do?ID=165131)
 
 
 KeyCloak은 오픈소스(redhat 자회사인 jboss 의해서 유지보수된다고 한다)
@@ -22,6 +23,7 @@ KeyCloak은 오픈소스(redhat 자회사인 jboss 의해서 유지보수된다�
 
 
 빅테크(구글, 페이스북) 기업들은 자체적으로 개발해서 사용함.
+
 
 
 # keycloak 관련해서 확인하던 글들

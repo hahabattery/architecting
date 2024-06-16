@@ -16,7 +16,7 @@ nav_order: 3
 * [SSO 구축기 - Authorization Server 선정과 프로필 서버 구축](https://velog.io/@ddkds66/SSO-%EA%B5%AC%EC%B6%95%EA%B8%B0-Authorization-Server-%EC%84%A0%EC%A0%95%EA%B3%BC-%ED%94%84%EB%A1%9C%ED%95%84-%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95)
 
 
-# Spring Authorization Server 를 잉요한 개발
+# Spring Authorization Server 를 이용한 개발
 
 * Simple Single Sign-On with Spring Security OAuth2
   + https://www.baeldung.com/sso-spring-security-oauth2

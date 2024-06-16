@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PCKE
+title: OAuth2.0 PCKE
 parent: Authentication And Authorization
 nav_order: 3
 ---
@@ -22,7 +22,7 @@ grant_type=authorization_code
 
 발음 ""픽시"
 
-PKCE는 OAuth2의 Authorization Code Grant flow에서 좀 더 강화된 보안을 제공해주는 Authorization Code Grant flow의 확장 버전이다.
+PKCE는 OAuth2의 Authorization Code Grant flow에서 좀 더 강화된 보안을 제공해주는 Authorization Code Grant flow의 확장 버전이다(보안이 낮은 수준인 브라우저인 경우를 보완하기 위해서 나왔다).
 
 Authorization Code Injection Attack을 막을 수 있다.
 
